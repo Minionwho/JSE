@@ -1,0 +1,67 @@
+.deliver {
+  height: 23px;
+  width: 76px;
+  background-color: green;
+}
+
+.cancel {
+  height: 20px;
+  background-color: red;
+}
+
+.cancel a {
+  color: white;
+  border: none;
+  text-decoration: none;
+}
+
+.onprocess {
+  background-color: yellow;
+  color: black;
+}
+
+.info {
+  border: none;
+  text-decoration: none;
+  background-color: #f24e1e;
+  border-radius: 100px;
+}
+
+.i {
+  border: none;
+  text-decoration: none;
+}
+
+table .cancel button {
+  color: white;
+  text-decoration: none;
+  border: none;
+  background-color: red;
+}
+
+#footer {
+  margin-top: 100px;
+  display: flex;
+  background-color: #2b3035;
+  height: 100%;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  text-align: center;
+  color: white;
+}
+
+footer h3 {
+  font-size: 20px;
+}
+
+footer img {
+  height: 40px;
+  width: 40px;
+}
+
+footer .content {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

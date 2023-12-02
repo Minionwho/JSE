@@ -1,0 +1,98 @@
+body {
+  font-family: "Roboto condensed", sans-serif;
+}
+
+nav {
+  font-family: "Raleway", sans-serif;
+  color: white !important;
+}
+
+nav .jse {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #e21e2c;
+}
+
+nav .express {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.right-nav a:hover {
+  background-color: rgba(226, 30, 44, 0.7) !important;
+  color: white;
+}
+
+form {
+  margin: 4rem 0;
+}
+
+.information {
+  margin-bottom: 6rem;
+}
+
+.information h2 {
+  margin: 2rem 0;
+  font-weight: 700;
+  color: #e21e2c;
+  font-family: "Raleway", sans-serif;
+}
+
+.row {
+  margin-bottom: 1.5rem;
+}
+
+.total-cost h2 {
+  margin-top: 3rem;
+  font-weight: 700;
+  color: #e21e2c;
+  font-family: "Raleway", sans-serif;
+}
+.total-cost .total {
+  color: black;
+}
+
+.total-cost button {
+  margin-top: 2rem;
+  border-radius: 4px;
+  font-size: 1.4rem;
+  padding: 7px 45px;
+  font-weight: 500;
+  border: none;
+  background: #cacaca;
+  color: gray;
+  transition: 0.4s;
+}
+
+.total-cost button:hover,
+.total-cost button:focus {
+  background: rgb(226, 30, 44);
+  color: #fff;
+}
+
+#footer {
+  display: flex;
+  background-color: #2b3035;
+  height: 0%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  color: white;
+}
+
+footer h3 {
+  font-size: 20px;
+}
+
+footer img {
+  height: 40px;
+  width: 40px;
+}
+
+footer .content {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

@@ -1,0 +1,119 @@
+body {
+  font-family: "Roboto condensed", sans-serif;
+}
+
+.container {
+  margin-bottom: 6rem;
+}
+
+.container h2 {
+  margin: 2rem 0;
+  font-weight: 700;
+  color: #e21e2c;
+  font-family: "Raleway", sans-serif;
+}
+
+.info {
+  margin-bottom: 2rem;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.status-label {
+  padding: 5px 10px;
+  color: #aaa;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.1s;
+}
+
+#onProcess:checked ~ .label-1 {
+  background-color: #fbbc04;
+  border-radius: 5px;
+  color: white;
+  transition: background-color 0.5s;
+}
+
+#delivered:checked ~ .label-2 {
+  background-color: #55cc77;
+  border-radius: 5px;
+  color: white;
+  transition: background-color 0.5s;
+}
+
+#cancelled:checked ~ .label-3 {
+  background-color: #ea4335;
+  border-radius: 5px;
+  color: white;
+  transition: background-color 0.5s;
+}
+
+.delivered h2 {
+  color: #55cc77;
+  font-weight: 600;
+  margin-top: 3rem;
+}
+
+.delivered button {
+  margin-top: 2rem;
+  border-radius: 4px;
+  font-size: 1.4rem;
+  border: none;
+  padding: 7px 45px;
+  font-weight: 500;
+  background-color: #e21e2c;
+}
+
+.delivered button:hover,
+.delivered button:focus {
+  background-color: #ff4351 !important;
+}
+
+.cancelled h2 {
+  font-weight: 600;
+  margin-top: 3rem;
+}
+
+.cancelled button {
+  margin-top: 2rem;
+  border-radius: 4px;
+  font-size: 1.4rem;
+  border: none;
+  padding: 7px 45px;
+  font-weight: 500;
+  background-color: #e21e2c;
+}
+
+.cancelled button:hover,
+.cancelled button:focus {
+  background-color: #ff4351 !important;
+}
+
+#footer {
+  display: flex;
+  background-color: #2b3035;
+  height: 0%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  color: white;
+}
+
+footer h3 {
+  font-size: 20px;
+}
+
+footer img {
+  height: 40px;
+  width: 40px;
+}
+
+footer .content {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
