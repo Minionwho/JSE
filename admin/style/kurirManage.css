@@ -1,52 +1,30 @@
-nav {
-  font-family: "Raleway", sans-serif;
-  color: white !important;
+.deliver{
+    height: 23px;
+    width: 76px;
+    background-color: green;
 }
 
-nav .jse {
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 1.5rem;
-  color: #e21e2c;
+.cancel{
+    height: 20px;
+    background-color: red;
 }
 
-nav .express {
-  font-weight: 500;
-  font-size: 1rem;
-}
-
-.right-nav a:hover {
-  background-color: rgba(226, 30, 44, 0.7) !important;
-  color: white;
-}
-
-.deliver {
-  height: 23px;
-  width: 76px;
-  background-color: green;
-}
-
-.cancel {
-  height: 20px;
-  background-color: red;
-}
-
-.cancel a {
+.cancel a{
   color: white;
   border: none;
   text-decoration: none;
 }
 
-.onprocess {
-  background-color: yellow;
-  color: black;
+.onprocess{
+    background-color: yellow;
+    color: black;
 }
 
-.info {
-  border: none;
-  text-decoration: none;
-  background-color: #f24e1e;
-  border-radius: 100px;
+.info{
+    border: none;
+    text-decoration: none;
+    background-color: #5bc0de;
+    border-radius: 100px;
 }
 
 .i {
@@ -54,40 +32,37 @@ nav .express {
   text-decoration: none;
 }
 
-table .cancel button {
-  color: white;
-  text-decoration: none;
-  border: none;
-  background-color: red;
+table .cancel button{
+    color: white;
+    text-decoration: none;
+    border: none;
+    background-color: red;
 }
+
 
 #footer {
-  margin-top: 100px;
-  display: flex;
-  background-color: #2b3035;
-  height: 100%;
-  padding-top: 20px;
-  bottom: 0;
-  text-align: center;
-  color: white;
-  position: fixed;
-  left: 0;
-  width: 100%;
-  height: fit-content;
-}
-
-footer h3 {
-  font-size: 20px;
-}
-
-footer img {
-  height: 40px;
-  width: 40px;
-}
-
-footer .content {
-  padding-top: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+    margin-top: 100px;
+    display: flex;
+    background-color: #2b3035;
+    height: 100%;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    text-align: center;
+    color: white;
+  }
+  
+  footer h3{
+    font-size: 20px;
+  }
+  
+  footer img{
+    height: 40px;
+    width: 40px;
+  }
+  
+  footer .content{
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
