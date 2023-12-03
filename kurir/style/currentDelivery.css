@@ -144,6 +144,9 @@ input[type="radio"] {
   padding-bottom: 20px;
   text-align: center;
   color: white;
+  bottom: 0;
+  position: sticky;
+  top: 100%;
 }
 
 footer h3 {
