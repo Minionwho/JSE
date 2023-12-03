@@ -28,6 +28,26 @@ form {
   margin: 4rem 0;
 }
 
+input[type="radio"] {
+  display: none;
+}
+
+.status-label {
+  padding: 5px 10px;
+  color: #aaa;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.1s;
+}
+#reguler:checked ~ .label-1,
+#prioritas:checked ~ .label-2 {
+  background-color: #aaa;
+  border-radius: 5px;
+  color: white;
+  transition: background-color 0.5s;
+}
+
 .information {
   margin-bottom: 6rem;
 }

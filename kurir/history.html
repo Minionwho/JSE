@@ -9,25 +9,30 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="style/history.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Poppins:wght@100;200;300;400;500;600;700&family=Raleway:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Poppins:wght@100;200;300;400;500;600;700&family=Raleway:wght@300;400;500;600;700;800&family=Roboto+Condensed:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style/login.css" />
-    <title>Kurir - Login</title>
+    <title>Kurir - Delivery Status</title>
   </head>
   <body>
     <nav
-      class="navbar navbar-dark bg-dark navbar-expand-lg bg-body-tertiary"
+      class="navbar navbar-dark navbar-expand-lg bg-body-tertiary"
       style="background-color: #222 !important; color: white !important"
     >
       <div class="container-fluid container">
         <a class="navbar-brand" href="../index.html"
           ><span class="jse">JSE</span><span class="express">express</span></a
-        >
-        <button
+        ><button
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
@@ -39,69 +44,38 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div
-          class="collapse navbar-collapse justify-content-end"
+          class="collapse navbar-collapse justify-content-between"
           id="navbarNavAltMarkup"
         >
           <div class="navbar-nav">
-            <a class="nav-link" href="../admin/login.html">Admin</a>
-            <a class="nav-link active" href="../kurir/login.html">Kurir</a>
+            <a class="nav-link active" href="history.html">History</a>
+            <a class="nav-link" href="currentDelivery.html">Delivery</a>
+          </div>
+          <div class="navbar-nav right-nav">
+            <a
+              class="nav-link"
+              href="../index.html"
+              style="
+                background-color: #e21e2c;
+                color: white;
+                font-size: 14px;
+                font-weight: 500;
+                padding: 6px 20px;
+                border-radius: 3px;
+              "
+              >Logout</a
+            >
           </div>
         </div>
       </div>
     </nav>
-    <!----------------------------------------------- LOGIN FORM ------------------------------------------------>
-    <div class="wrapper">
-      <div class="container main">
-        <div class="row form-card">
-          <div class="col-md-6 left">
-            <div class="input-box">
-              <header>Login Kurir</header>
-              <form id="form" action="history.html">
-                <div class="input-field">
-                  <input
-                    type="text"
-                    class="input"
-                    id="username"
-                    required
-                    autocomplete="off"
-                  />
-                  <label for="username">Username</label>
-                </div>
-                <div class="input-field">
-                  <input type="password" class="input" id="password" required />
-                  <label for="password">Password</label>
-                </div>
-                <div class="input-field">
-                  <input
-                    type="submit"
-                    class="submit"
-                    value="Login"
-                    onclick="kurirLogin()"
-                  />
-                </div>
-                <div class="signup">
-                  <span
-                    >Don't have an account?
-                    <a href="signup.html">Sign up here</a></span
-                  >
-                </div>
-              </form>
-            </div>
-          </div>
-          <div class="col-md-6 order-first order-md-1 side-image">
-            <div class="text">
-              <h2>Kurir Account</h2>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+
     <footer id="footer">
       <div class="container">
         <h3>Download us at</h3>
         <div class="imaga-logo">
-          <!-- <img src="../src/Googleplay.png" alt="" />
-          <img src="../src/Applestore-removebg-preview.png" alt="" /> -->
+          <img src="../../src/images/Googleplay.png" alt="" />
+          <img src="../../src/images/Applestore-removebg-preview.png" alt="" />
         </div>
         <div class="content">
           <h3>
@@ -119,6 +93,5 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-    <script src="js/signupLogin.js"></script>
   </body>
 </html>

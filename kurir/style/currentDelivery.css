@@ -2,7 +2,30 @@ body {
   font-family: "Roboto condensed", sans-serif;
 }
 
-.container {
+nav {
+  font-family: "Raleway", sans-serif;
+  color: white !important;
+  height: min-content;
+}
+
+nav .jse {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #e21e2c;
+}
+
+nav .express {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.right-nav a:hover {
+  background-color: rgba(226, 30, 44, 0.7) !important;
+  color: white;
+}
+
+.container-status {
   margin-bottom: 6rem;
 }
 
@@ -49,6 +72,27 @@ input[type="radio"] {
   border-radius: 5px;
   color: white;
   transition: background-color 0.5s;
+}
+
+.on-process h2 {
+  color: #fbbc04;
+  font-weight: 600;
+  margin-top: 3rem;
+}
+
+.on-process button {
+  margin-top: 2rem;
+  border-radius: 4px;
+  font-size: 1.4rem;
+  border: none;
+  padding: 7px 45px;
+  font-weight: 500;
+  background-color: #e21e2c;
+}
+
+.on-process button:hover,
+.on-process button:focus {
+  background-color: #ff4351 !important;
 }
 
 .delivered h2 {

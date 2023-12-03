@@ -2,8 +2,7 @@ let kurirs = [
   { username: "kurir1", password: "kurir1pass" },
   { username: "kurir2", password: "kurir2pass" },
 ];
-let admins = [{ username: "admin", password: "admin123" }];
-let currentKurir, currentAdmin;
+let currentKurir;
 
 function kurirSignup() {
   const username = document.getElementById("username").value;
@@ -33,7 +32,7 @@ function kurirLogin() {
       found = true;
       currentKurir = kurir;
       alert("kurir found");
-      window.location.assign("../kurir/deliveryStatus.html");
+      window.location.assign("../kurir/history.html");
     }
   });
 

@@ -1,0 +1,97 @@
+body {
+  min-height: 100vh;
+}
+
+/* ========================================== NAVBAR ========================================== */
+nav {
+  font-family: "Raleway", sans-serif;
+  color: white !important;
+}
+
+nav .jse {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #e21e2c;
+}
+
+nav .express {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+nav .nav-link {
+  /* background-color: #e21e2c; */
+  font-weight: 500;
+  font-size: 15px;
+  border-radius: 4px;
+  padding: 2px 10px;
+  margin: 0 10px;
+}
+
+/* ===================================== PACKAGE INFORMATION ====================================== */
+.delivery {
+  font-family: "Roboto condensed", sans-serif;
+  font-size: 18px;
+}
+
+.package-information {
+  background-color: #e3e3e3;
+  margin: 20px;
+  padding: 20px 40px;
+  border-radius: 10px;
+  height: fit-content;
+}
+
+.package-information h3 {
+  font-weight: 700;
+  margin-bottom: 1.8rem;
+}
+
+/* ====================================== DELIVERY TRACKING ======================================= */
+.delivery-tracking {
+  background-color: #e3e3e3;
+  margin: 20px;
+  padding: 20px 40px;
+  border-radius: 10px;
+  height: fit-content;
+}
+
+.delivery-tracking h3 {
+  color: #55cc77;
+  font-weight: 700;
+}
+
+.track-info .date {
+  text-align: right;
+}
+
+/* ============================================ FOOTER ============================================ */
+#footer {
+  display: flex;
+  background-color: #2b3035;
+  height: 0%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  color: white;
+  bottom: 0;
+  position: sticky;
+  top: 100%;
+}
+
+footer h3 {
+  font-size: 20px;
+}
+
+footer img {
+  height: 40px;
+  width: 40px;
+}
+
+footer .content {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
