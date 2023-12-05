@@ -1,14 +1,14 @@
+const form = document.getElementById("form");
 const submitBtn = document.querySelector(".submit");
+const serviceTypes = form.elements["serviceType"];
 
 submitBtn.addEventListener("click", (e) => {
-  // e.preventDefault();
+  e.preventDefault();
 
   // Package Information
-  const form = document.getElementById("form");
-  let resiInput = document.querySelector(".resi");
   const dateInput = document.getElementById("inputDate").value;
-  const serviceTypes = form.elements["serviceType"];
-  const packageWeight = document.getElementById("inputPackageWeight").value;
+  let packageWeight = document.getElementById("inputPackageWeight").value;
+  let totalCost = document.querySelector(".total");
 
   // Sender Information
   const senderName = document.getElementById("inputSenderName").value;
@@ -29,8 +29,19 @@ submitBtn.addEventListener("click", (e) => {
     if (serviceTypes[i].checked) serviceType = serviceTypes[i].value;
   }
 
+  let decimalPart = Number(packageWeight) - Math.floor(Number(packageWeight));
+  const roundedDecimalPart = parseFloat(decimalPart.toFixed(5));
+  let roundPackageWeight =
+    roundedDecimalPart >= 0.3
+      ? Math.ceil(packageWeight)
+      : Math.floor(packageWeight);
+  const deliveryPrice =
+    serviceType === "REG"
+      ? roundPackageWeight * 5000
+      : roundPackageWeight * 5000 + 5000;
+
+  totalCost.innerHTML = formatRupiah(parseInt(deliveryPrice));
   if (
-    !dateInput ||
     !serviceType ||
     !packageWeight ||
     !senderName ||
@@ -45,8 +56,78 @@ submitBtn.addEventListener("click", (e) => {
     return;
   }
 
-  alert("Package created.");
+  const baseUrl = "https://localhost:7023/create_delivery";
+  const credentials = {
+    sender_name: senderName,
+    sender_phone: senderPhone,
+    sender_address: senderAddress,
+    intended_receiver_name: intendedReceiverName,
+    receiver_phone: receiverPhone,
+    receiver_address: receiverAddress,
+    service_type: serviceType,
+    package_weight: parseInt(packageWeight),
+    delivery_price: parseInt(deliveryPrice),
+    pool_sender_city: senderCity,
+    pool_receiver_city: receiverCity,
+  };
+
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(credentials),
+  };
+
+  async function fetchData() {
+    try {
+      const response = await fetch(baseUrl, options);
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log(data);
+
+      alert("Package created.");
+      // window.location.assign("../admin/dashboard/create.html");
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  }
+
+  fetchData();
 });
+
+function calcTotalCost() {
+  let serviceType;
+  let packageWeight = document.getElementById("inputPackageWeight").value;
+  let totalCost = document.querySelector(".total");
+  for (let i = 0; i < serviceTypes.length; i++)
+    if (serviceTypes[i].checked) serviceType = serviceTypes[i].value;
+
+  let decimalPart = Number(packageWeight) - Math.floor(Number(packageWeight));
+  const roundedDecimalPart = parseFloat(decimalPart.toFixed(5));
+  let roundPackageWeight =
+    roundedDecimalPart >= 0.3
+      ? Math.ceil(packageWeight)
+      : Math.floor(packageWeight);
+  const deliveryPrice =
+    serviceType === "REG"
+      ? roundPackageWeight * 5000
+      : roundPackageWeight * 5000 + 5000;
+
+  totalCost.innerHTML = formatRupiah(parseInt(deliveryPrice));
+}
+
+function formatRupiah(number) {
+  const parts = number.toFixed(2).toString().split(".");
+  const formattedInteger = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  const formattedRupiah = `Rp${formattedInteger}`;
+
+  return formattedRupiah;
+}
 
 function logout() {
   localStorage.removeItem("jwtToken");

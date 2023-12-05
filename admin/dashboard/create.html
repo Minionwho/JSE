@@ -89,7 +89,7 @@
                 type="radio"
                 id="reguler"
                 name="serviceType"
-                value="reguler"
+                value="REG"
                 checked
               />
               <label class="status-label label-1" for="reguler">Reguler</label>
@@ -97,7 +97,7 @@
                 type="radio"
                 id="prioritas"
                 name="serviceType"
-                value="prioritas"
+                value="PRIO"
               />
               <label class="status-label label-2" for="prioritas"
                 >Prioritas</label
@@ -113,6 +113,7 @@
               type="number"
               class="form-control"
               id="inputPackageWeight"
+              onchange="calcTotalCost()"
               required
             />
           </div>
@@ -173,7 +174,7 @@
           </div>
         </div>
       </div>
-      <!-------------------------------- RECEIVER INFORMATION  --------------------------------->
+      <!-------------------------------- RECEIVER INFORMATION --------------------------------->
       <div class="container information">
         <h2>Receiver Information</h2>
         <div class="row g-3">

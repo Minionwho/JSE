@@ -9,7 +9,6 @@ let poolCityInput,
 
 submitBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  console.log("oy");
 
   for (let i = 0; i < cities.length; i++) {
     if (cities[i].checked) poolCityInput = cities[i].value;
