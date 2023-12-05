@@ -24,15 +24,12 @@ nav .express {
   color: white;
 }
 
+
 .deliver {
-  height: 23px;
+  padding-top: 10px;
+  height: 32px;
   width: 76px;
   background-color: green;
-}
-
-.cancel {
-  height: 20px;
-  background-color: red;
 }
 
 .cancel a {
@@ -42,6 +39,8 @@ nav .express {
 }
 
 .onprocess {
+  padding-top: 10px;
+  height: 32px;
   background-color: yellow;
   color: black;
 }
@@ -59,11 +58,17 @@ nav .express {
 }
 
 table .cancel button {
+  width: fit-content;
+  /* height: 20px; */
+  font-size: 13px;
   color: white;
   text-decoration: none;
   border: none;
   background-color: red;
+  transition: none;
 }
+
+
 
 .logout {
   cursor: pointer;

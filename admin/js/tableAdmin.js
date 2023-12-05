@@ -1,6 +1,6 @@
 const endpoint = "https://localhost:7023/delivery";
 var shipmentData;
-
+var message;
 function populateTable() {
   var tableBody = document.querySelector("#myTable tbody");
 
@@ -16,10 +16,10 @@ function populateTable() {
                             <td>${shipment.sender_name}</td>
                             <td>${shipment.intended_receiver_name}</td>
                             <td>${shipment.receiver_address}</td>
-                            <td>${getStatusBadge(
-                              shipment.delivery_status
-                            )}</td>`;
+                            <td class="onprocess popover-trigger">${getStatusBadge(shipment.delivery_status)}</td>`;
         });
+        initializePopovers();
+
       } else {
         console.error("Error: Data from API is undefined or empty.");
       }
@@ -28,6 +28,7 @@ function populateTable() {
       console.error("Error fetching data from API:", error);
     });
 }
+
 
 // Function to generate status badge based on status
 function getStatusBadge(delivery_status) {
@@ -40,16 +41,16 @@ function getStatusBadge(delivery_status) {
       badgeContent = "Delivered";
       break;
     case "delivery_failed":
-      badgeClass = "cancel badge badge-danger";
-      badgeContent = '<a href="/index.html">Canceled</a>';
+      badgeClass = "cancel";
+      badgeContent = '<button type="button" class="btn btn-secondary popover-trigger" data-bs-toggle="popover" data-bs-placement="top" title="Alasan Cancel" data-bs-content="${shipment.fail_message}">Cancel</button>';
       break;
     case "returned_to_pool":
-      badgeClass = "cancel badge badge-danger";
-      badgeContent = '<a href="/index.html">Canceled</a>';
+      badgeClass = "cancel";
+      badgeContent = '<button type="button" class="btn btn-secondary popover-trigger" data-bs-toggle="popover" data-bs-placement="top" title="Alasan Cancel" data-bs-content="${shipment.fail_message}">Cancel</button>';
       break;
     case "on_sender_pool":
       badgeClass = "onprocess badge badge-warning";
-      badgeContent = "On Process";
+      badgeContent = `On Process`;
       break;
     case "dispatched":
       badgeClass = "onprocess badge badge-warning";
@@ -71,6 +72,13 @@ function getStatusBadge(delivery_status) {
   return `<span class="${badgeClass}">${badgeContent}</span> <a href="/index.html" class="i"><span class="info badge badge-info">i</span><a>`;
 }
 
+function initializePopovers() {
+  var popoverTriggerList = [].slice.call(document.querySelectorAll('.popover-trigger'));
+  var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+    return new bootstrap.Popover(popoverTriggerEl);
+  });
+}
+
 function logout() {
   localStorage.removeItem("jwtToken");
   window.location.assign("../../index.html");
@@ -79,3 +87,4 @@ function logout() {
 window.onload = function () {
   populateTable();
 };
+
