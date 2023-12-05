@@ -16,9 +16,16 @@
 			href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Poppins:wght@100;200;300;400;500;600;700&family=Raleway:wght@300;400;500;600;700;800&family=Roboto+Condensed:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap"
 			rel="stylesheet"
 		/>
+		<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
 		<title>Admin - Create Package</title>
 	</head>
 	<body>
+		<div id="modal" class="modal">
+			<div class="modal-content">
+				<span id="closeModalBtn" class="close">&times;</span>
+			</div>
+		</div>
 		<nav
 			class="navbar navbar-dark navbar-expand-lg bg-body-tertiary"
 			style="background-color: #222 !important; color: white !important"
@@ -56,39 +63,33 @@
 				<div class="col-lg-4 package-information">
 					<h3>Package Information</h3>
 					<div class="mb-3 row">
-						<div class="col-sm-5 info-label">Nomor Resi</div>
-						<div class="col-sm-7 nomor-resi">SPXID03233379921B</div>
+						<div class="col-sm-5 info-label">Nomor Resi:</div>
+						<div class="col-sm-7 nomor-resi"></div>
 					</div>
 					<div class="mb-3 row">
-						<div class="col-sm-5 info-label">Nama Penerima</div>
-						<div class="col-sm-7 nama-penerima">John Locke</div>
+						<div class="col-sm-5 info-label">Nama Penerima:</div>
+						<div class="col-sm-7 nama-penerima"></div>
 					</div>
 					<div class="mb-3 row">
-						<div class="col-sm-5 info-label">Nomor Telepon</div>
-						<div class="col-sm-7 nomor-penerima">
-							*** **** **** 5600
-						</div>
+						<div class="col-sm-5 info-label">Nomor Telepon:</div>
+						<div class="col-sm-7 nomor-penerima"></div>
 					</div>
 					<div class="mb-3 row">
-						<div class="col-sm-5 info-label">Nama Kurir</div>
-						<div class="col-sm-7 nama-kurir">Will Smith</div>
+						<div class="col-sm-5 info-label">Nama Kurir:</div>
+						<div class="col-sm-7 nama-kurir"></div>
 					</div>
 					<div class="mb-3 row">
 						<div class="col-sm-5 info-label">Bukti foto</div>
-						<div class="col-sm-7"><a href="">See Picture</a></div>
+						<div class="col-sm-7 link-picture">
+							<a href="" id="openModalBtn">See Picture</a>
+						</div>
 					</div>
 				</div>
 				<!-- <div class="col-lg-1"></div> -->
 				<!------------- DELIVERY TRACKING -------------->
 				<div class="col-lg-7 delivery-tracking">
-					<h3 class="status">Delivered</h3>
+					<h3 class="status">Status:</h3>
 					<hr />
-					<div class="mb-3 row track-info">
-						<div class="col-sm-5 date">19 Nov 2023 10:20:24</div>
-						<div class="col-sm-7 message">
-							Paket dikirim ke hub oleh penjual
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>
