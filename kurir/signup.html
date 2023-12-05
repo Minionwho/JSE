@@ -56,7 +56,7 @@
           <div class="col-md-6 left">
             <div class="input-box">
               <header>Sign Up Kurir</header>
-              <form id="form" action="history.html">
+              <form id="form" class="needs-validation" action="">
                 <div class="input-field">
                   <input
                     type="text"
@@ -71,6 +71,7 @@
                 <div class="input-field">
                   <input type="password" class="input" id="password" required />
                   <label for="password">Password</label>
+                  <div class="error"></div>
                 </div>
                 <div class="input-field">
                   <input
@@ -80,6 +81,7 @@
                     required
                   />
                   <label for="confirmPassword">Confirm Password</label>
+                  <div class="error"></div>
                 </div>
                 <div class="input-field">
                   <input
@@ -96,9 +98,8 @@
                   <input
                     type="radio"
                     id="jakarta"
-                    name="status"
-                    value="jakarta"
-                    checked
+                    name="city"
+                    value="Jakarta"
                   />
                   <label class="status-label label-1" for="jakarta"
                     >Jakarta</label
@@ -106,24 +107,19 @@
                   <input
                     type="radio"
                     id="tangerang"
-                    name="status"
-                    value="tangerang"
+                    name="city"
+                    value="Tangerang"
                   />
                   <label class="status-label label-2" for="tangerang"
                     >Tangerang</label
                   >
-                  <input type="radio" id="depok" name="status" value="depok" />
+                  <input type="radio" id="depok" name="city" value="Depok" />
                   <label class="status-label label-3" for="depok">Depok</label>
-                  <input type="radio" id="bogor" name="status" value="bogor" />
+                  <input type="radio" id="bogor" name="city" value="Bogor" />
                   <label class="status-label label-4" for="bogor">Bogor</label>
                 </div>
                 <div class="input-field">
-                  <input
-                    type="submit"
-                    class="submit"
-                    onclick="kurirSignup()"
-                    value="Sign Up"
-                  />
+                  <input type="submit" class="submit" value="Sign Up" />
                 </div>
                 <div class="signin">
                   <span
@@ -165,6 +161,6 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-    <script src="js/signupLogin.js"></script>
+    <script src="js/signup.js"></script>
   </body>
 </html>

@@ -63,7 +63,7 @@
         </div>
       </div>
     </nav>
-    <form>
+    <form id="form">
       <!-------------------------------- PACKAGE INFORMATION  --------------------------------->
       <div class="container information">
         <h2>Package Information</h2>
@@ -88,7 +88,7 @@
               <input
                 type="radio"
                 id="reguler"
-                name="status"
+                name="serviceType"
                 value="reguler"
                 checked
               />
@@ -96,7 +96,7 @@
               <input
                 type="radio"
                 id="prioritas"
-                name="status"
+                name="serviceType"
                 value="prioritas"
               />
               <label class="status-label label-2" for="prioritas"
@@ -165,10 +165,10 @@
               ><h5>Sender city</h5></label
             >
             <select id="inputSenderCity" class="form-select">
-              <option>Jakarta</option>
-              <option>Tangerang</option>
-              <option>Depok</option>
-              <option>Bogor</option>
+              <option value="Jakarta">Jakarta</option>
+              <option value="Tangerang">Tangerang</option>
+              <option value="Depok">Depok</option>
+              <option value="Bogor">Bogor</option>
             </select>
           </div>
         </div>
@@ -220,22 +220,25 @@
               ><h5>Receiver city</h5></label
             >
             <select id="inputReceiverCity" class="form-select">
-              <option>Jakarta</option>
-              <option>Tangerang</option>
-              <option>Depok</option>
-              <option>Bogor</option>
+              <option value="Jakarta">Jakarta</option>
+              <option value="Tangerang">Tangerang</option>
+              <option value="Depok">Depok</option>
+              <option value="Bogor">Bogor</option>
             </select>
           </div>
         </div>
       </div>
-      <!-------------------------------- RECEIVER INFORMATION  --------------------------------->
+      <!---------------------------------- SUBMIT BUTTON ----------------------------------->
       <hr />
       <div class="container total-cost">
         <h2>Total Cost</h2>
         <h3 class="total">Rp0</h3>
-        <button type="submit" class="btn btn-primary">Create Delivery</button>
+        <button type="submit" class="submit btn btn-primary">
+          Create Delivery
+        </button>
       </div>
     </form>
+    <!-------------------------------------- FOOTER --------------------------------------->
     <footer id="footer">
       <div class="container">
         <h3>Download us at</h3>
@@ -259,5 +262,6 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <script src="../js/create.js"></script>
   </body>
 </html>
