@@ -6,7 +6,6 @@ submitBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
   // Package Information
-  // let resiInput = document.querySelector(".resi");
   const dateInput = document.getElementById("inputDate").value;
   let packageWeight = document.getElementById("inputPackageWeight").value;
   let totalCost = document.querySelector(".total");
