@@ -1,18 +1,3 @@
-let couriers = [
-  {
-    username: "kurir1",
-    password: "kurir1pass",
-    poolCity: "Jakarta",
-    phone: "12112",
-  },
-  {
-    username: "kurir2",
-    password: "kurir2pass",
-    poolCity: "Tangerang",
-    phone: "12131",
-  },
-];
-
 const form = document.getElementById("form");
 const usernameInput = document.getElementById("username");
 const passwordInput = document.getElementById("password");
@@ -37,33 +22,54 @@ submitBtn.addEventListener("click", (e) => {
     !usernameInput.value ||
     !passwordInput.value ||
     !confirmPassword.value ||
-    !phoneInput.value ||
-    !poolCityInput
-  ) {
-    if (!poolCityInput) alert("Input pool city");
+    !phoneInput.value
+  )
+    return;
+  if (!poolCityInput) {
+    alert("Input pool city");
     return;
   }
 
   if (confirmPassword.value !== passwordInput.value) return;
 
   if (validInput) {
-    // check username already taken or not
-    if (couriers.some((courier) => courier.username === usernameInput.value)) {
-      alert("Username already taken. Please choose another.");
-      return;
-    }
-
-    couriers.push({
-      username: usernameInput.value,
-      password: passwordInput.value,
-      poolCity: poolCityInput,
-      phone: phoneInput.value,
+    const baseUrl = "https://localhost:7023/courier/register";
+    const jwt =
+      "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiamFrYXJ0YSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiMmYzMWI3MWEtYTMxMi00ZmFmLWI1OWEtMjdjZmViNGEwMmJkIiwicG9vbF9jaXR5IjoiSmFrYXJ0YSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkNvdXJpZXIiLCJleHAiOjE3MDE4MDExNTR9.FAXpeyQ2KlI1pLqL5vY3PMxGm_QsVOHpvc-ZYnsfsxEBRk77a727Ns13lFPEov-oBWUhZ1flvhQyO1Hr9yiv7g";
+    const credentials = {
+      courier_username: usernameInput.value,
+      courier_password: passwordInput.value,
+      courier_confirm_password: confirmPassword.value,
+      pool_city: poolCityInput,
+      courier_phone: phoneInput.value,
+    };
+    const headers = new Headers({
+      Authorization: "Bearer " + jwt,
+      "Content-Type": "application/json",
     });
 
-    currentCourier = couriers[couriers.length - 1];
-    console.log(couriers);
-    console.log(currentCourier);
-    window.location.assign("../kurir/currentDelivery.html");
+    async function fetchData() {
+      try {
+        const response = await fetch(baseUrl, {
+          method: "POST",
+          headers: headers,
+          body: JSON.stringify(credentials),
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log(jwt);
+        console.log(data);
+        window.location.assign("../kurir/history.html");
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    }
+
+    fetchData();
   }
   return;
 });

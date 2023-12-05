@@ -65,6 +65,10 @@ table .cancel button {
   background-color: red;
 }
 
+.logout {
+  cursor: pointer;
+}
+
 #footer {
   display: flex;
   background-color: #2b3035;

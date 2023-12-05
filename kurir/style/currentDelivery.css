@@ -136,6 +136,10 @@ input[type="radio"] {
   background-color: #ff4351 !important;
 }
 
+.logout {
+  cursor: pointer;
+}
+
 #footer {
   display: flex;
   background-color: #2b3035;

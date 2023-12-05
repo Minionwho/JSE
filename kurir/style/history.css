@@ -25,6 +25,10 @@ nav .express {
   color: white;
 }
 
+.logout {
+  cursor: pointer;
+}
+
 #footer {
   display: flex;
   background-color: #2b3035;
@@ -52,4 +56,3 @@ footer .content {
   flex-direction: column;
   gap: 10px;
 }
-

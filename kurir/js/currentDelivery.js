@@ -5,3 +5,8 @@ function toggleStatus(status) {
 
   document.querySelector("." + status).style.display = "block";
 }
+
+function logout() {
+  localStorage.removeItem("jwtToken");
+  window.location.assign("../../index.html");
+}

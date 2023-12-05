@@ -47,3 +47,8 @@ submitBtn.addEventListener("click", (e) => {
 
   alert("Package created.");
 });
+
+function logout() {
+  localStorage.removeItem("jwtToken");
+  window.location.assign("../../index.html");
+}
