@@ -5,8 +5,7 @@ const confirmPassword = document.getElementById("confirmPassword");
 const phoneInput = document.getElementById("phone");
 const submitBtn = document.querySelector(".submit");
 const cities = form.elements["city"];
-let currentCourier,
-  poolCityInput,
+let poolCityInput,
   validInput = false;
 
 submitBtn.addEventListener("click", (e) => {
@@ -18,6 +17,7 @@ submitBtn.addEventListener("click", (e) => {
 
   // check if input is empty
   validateInput();
+
   if (
     !usernameInput.value ||
     !passwordInput.value ||
@@ -57,6 +57,7 @@ submitBtn.addEventListener("click", (e) => {
         });
 
         if (!response.ok) {
+          alert("Username already exists!");
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
 
@@ -71,9 +72,9 @@ submitBtn.addEventListener("click", (e) => {
 
     fetchData();
   }
-  return;
 });
 
+// --------------------------------------- VALIDATION ---------------------------------------
 const setError = (element, message) => {
   const inputControl = element.parentElement;
   const errorDisplay = inputControl.querySelector(".error");
