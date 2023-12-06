@@ -31,7 +31,7 @@ function populateTable() {
 		.then((data) => {
 			// Periksa apakah data dari API tidak kosong
 			if (data && data.length > 0) {
-				data.forEach(function (shipment) {
+				data.forEach((shipment) => {
 					// Convert timestamp to date
 					const sendingDate = new Date(shipment.sending_date);
 

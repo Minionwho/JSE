@@ -22,7 +22,7 @@ function populateTable() {
                             <td>${shipment.intended_receiver_name}</td>
                             <td>${shipment.receiver_address}</td>
                             <td class="onprocess popover-trigger">${getStatusBadge(
-								shipment.delivery_status
+								shipment
 							)}</td>`;
 				});
 				initializePopovers();
@@ -36,24 +36,22 @@ function populateTable() {
 }
 
 // Function to generate status badge based on status
-function getStatusBadge(delivery_status) {
+function getStatusBadge(shipment) {
 	var badgeClass = "";
 	var badgeContent = "";
 
-	switch (delivery_status) {
+	switch (shipment.delivery_status) {
 		case "package_delivered":
 			badgeClass = "deliver badge badge-success";
 			badgeContent = "Delivered";
 			break;
 		case "delivery_failed":
 			badgeClass = "cancel";
-			badgeContent =
-				'<button type="button" class="btn btn-secondary popover-trigger" data-bs-toggle="popover" data-bs-placement="top" title="Alasan Cancel" data-bs-content="${shipment.fail_message}">Cancel</button>';
+			badgeContent = `<button type="button" class="btn btn-secondary popover-trigger" data-bs-toggle="popover" data-bs-placement="top" title="Alasan Cancel" data-bs-content="${shipment.fail_message}">Cancel</button>`;
 			break;
 		case "returned_to_pool":
 			badgeClass = "cancel";
-			badgeContent =
-				'<button type="button" class="btn btn-secondary popover-trigger" data-bs-toggle="popover" data-bs-placement="top" title="Alasan Cancel" data-bs-content="${shipment.fail_message}">Cancel</button>';
+			badgeContent = `<button type="button" class="btn btn-secondary popover-trigger" data-bs-toggle="popover" data-bs-placement="top" title="Alasan Cancel" data-bs-content="${shipment.fail_message}">Cancel</button>`;
 			break;
 		case "on_sender_pool":
 			badgeClass = "onprocess badge badge-warning";
