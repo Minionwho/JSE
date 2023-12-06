@@ -3,16 +3,16 @@ const { jwtToken, jwtData } = checkAuth("Admin", window.location.href);
 function dispatch() {
     var trackingNumber = document.getElementById("trackingNumberInput").value;
 
+    var messageElement = document.getElementById("message");
+
     if (trackingNumber.trim() !== "") {
         var apiUrl = "https://localhost:7023/dispatch?tracking_number=" + trackingNumber;
 
         fetch(apiUrl, {
-            method: 'PATCH', // Menggunakan metode PATCH
+            method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
-                // Jika diperlukan, Anda dapat menambahkan header lain di sini
             },
-            // Jika Anda perlu mengirim data JSON dalam tubuh permintaan, tambahkan properti body di sini
         })
         .then(response => {
             if (!response.ok) {
@@ -21,13 +21,16 @@ function dispatch() {
             return response.json();
         })
         .then(data => {
-            document.getElementById("message").innerText = data.message_text;
+            messageElement.innerText = data.message_text;
+            messageElement.className = data.success ? "message success" : "message error";
         })
         .catch(error => {
-            document.getElementById("message").innerText = "Terjadi kesalahan: " + error.message;
+            messageElement.innerText = "Terjadi kesalahan: " + error.message;
+            messageElement.className = "message error";
         });
     } else {
-        document.getElementById("message").innerText = "Nomor Resi tidak boleh kosong";
+        messageElement.innerText = "Nomor Resi tidak boleh kosong";
+        messageElement.className = "message error";
     }
 }
 
