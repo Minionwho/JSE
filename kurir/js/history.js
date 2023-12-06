@@ -16,9 +16,14 @@ function populateTable() {
 					row.innerHTML = `<th scope="row">${
 						shipment.tracking_number
 					}</th>
-                            <td>${shipment.actual_receiver_name}</td>
+                            <td>${shipment.intended_receiver_name}</td>
                             <td>${shipment.receiver_phone}</td>
                             <td>${shipment.receiver_address}</td>
+                            <td>${
+								shipment.actual_receiver_name
+									? shipment.actual_receiver_name
+									: "N/A"
+							}</td>
                             <td>${getStatusBadge(
 								shipment.delivery_status
 							)}</td>`;
