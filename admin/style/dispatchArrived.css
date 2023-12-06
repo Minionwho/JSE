@@ -1,0 +1,88 @@
+body {
+    min-height: 100vh;
+  }
+  
+  nav {
+    font-family: "Raleway", sans-serif;
+    color: white !important;
+  }
+  
+  nav .jse {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #e21e2c;
+  }
+  
+  nav .express {
+    font-weight: 500;
+    font-size: 1rem;
+  }
+  
+  .right-nav a:hover {
+    background-color: rgba(226, 30, 44, 0.7) !important;
+    color: white;
+  }
+
+  .container-button{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 30px;
+  }
+
+  .container-button button{
+    width: 10%;
+  }
+
+  .message {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.message.success {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+}
+
+.message.error {
+    background-color: #f8d7da;
+    border: 1px solid #721c24;
+    color: #721c24;
+}
+
+  .logout {
+    cursor: pointer;
+  }
+
+  #footer {
+    display: flex;
+    background-color: #2b3035;
+    height: 0%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    color: white;
+    bottom: 0;
+    position: sticky;
+    top: 100%;
+  }
+  
+  footer h3 {
+    font-size: 20px;
+  }
+  
+  footer img {
+    height: 40px;
+    width: 40px;
+  }
+  
+  footer .content {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
