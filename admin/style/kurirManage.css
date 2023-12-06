@@ -24,39 +24,45 @@ nav .express {
   color: white;
 }
 
-.deliver {
-  height: 23px;
-  width: 76px;
-  background-color: green;
+.isi{
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
 }
 
-.cancel {
-  height: 20px;
-  background-color: red;
+.deliver {
+	padding-top: 10px;
+	height: 32px;
+	width: 76px;
+	background-color: green;
 }
 
 .cancel a {
-  color: white;
-  border: none;
-  text-decoration: none;
+	color: white;
+	border: none;
+	text-decoration: none;
 }
 
 .onprocess {
-  background-color: yellow;
-  color: black;
+	padding-top: 10px;
+	height: 32px;
+	background-color: yellow;
+	color: black;
 }
 
-.info {
-  border: none;
-  text-decoration: none;
-  background-color: #f24e1e;
-  border-radius: 100px;
-}
+.infoBtn {
+    border-radius: 50%;
+	margin: 0;
+	padding: 0;
+	height: 20px;
+	width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	align-self: center;
+    font-size: 12px; 
+  }
 
-.i {
-  border: none;
-  text-decoration: none;
-}
 
 table .cancel button {
   color: white;

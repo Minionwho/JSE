@@ -92,9 +92,9 @@ function getStatusBadge(shipment) {
 			badgeContent = "Unknown";
 	}
 
-	return `<span class="${badgeClass}">${badgeContent}</span>
+	return `<div class="isi"><span class="${badgeClass}">${badgeContent}</span>
    <button type="button" class="btn btn-info infoBtn" data-bs-toggle="modal" 
-   data-bs-target="#infoModal" data-shipment='${shipment.tracking_number}' onclick="handleOnClickMoreInfo(event)">i</button>`;
+   data-bs-target="#infoModal" data-shipment='${shipment.tracking_number}' onclick="handleOnClickMoreInfo(event)">i</button></div>`;
 }
 
 function initializePopovers() {
