@@ -68,11 +68,15 @@
 		<!-- Content -->
 
 		<div class="container pt-5">
-			<a href="create.html"><button type="button" class="btn btn-success">Tambah</button></a>
+			<a href="create.html"
+				><button type="button" class="btn btn-success">
+					Tambah
+				</button></a
+			>
 		</div>
 
 		<div class="container pt-5">
-			<form class="d-flex">
+			<form class="d-flex" id="searchForm">
 				<input
 					id="searchInput"
 					class="form-control me-2"
@@ -104,23 +108,137 @@
 			</table>
 		</div>
 
-
-    <!-- Modal -->
-    <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="infoModalLabel">Informasi Pengiriman</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <!-- Konten informasi akan ditampilkan di sini -->
-          </div>
-        </div>
-      </div>
-    </div>
-
-    
+		<!-- Modal -->
+		<div
+			class="modal fade"
+			id="infoModal"
+			tabindex="-1"
+			aria-labelledby="infoModalLabel"
+			aria-hidden="true"
+		>
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="infoModalLabel">
+							Informasi Pengiriman
+						</h5>
+						<button
+							type="button"
+							class="btn-close"
+							data-bs-dismiss="modal"
+							aria-label="Close"
+						></button>
+					</div>
+					<div class="modal-body">
+						<!-- Konten informasi akan ditampilkan di sini -->
+						<table class="table">
+							<tbody>
+								<tr>
+									<th class="row-header" scope="row">
+										Nomor Resi
+									</th>
+									<td class="mid-header">:</td>
+									<td id="nomor-resi">123123123</td>
+								</tr>
+								<tr>
+									<th class="row-header" scope="row">
+										Tanggal Pengiriman
+									</th>
+									<td class="mid-header">:</td>
+									<td id="tanggal-pengiriman">123123123</td>
+								</tr>
+								<tr>
+									<th class="row-header" scope="row">
+										Tipe Pengiriman
+									</th>
+									<td class="mid-header">:</td>
+									<td id="tipe-pengiriman">123123123</td>
+								</tr>
+								<tr>
+									<th class="row-header" scope="row">
+										Nama Pengirim
+									</th>
+									<td class="mid-header">:</td>
+									<td id="nama-pengirim">123123123123</td>
+								</tr>
+								<tr>
+									<th class="row-header" scope="row">
+										Nama Penerima
+									</th>
+									<td class="mid-header">:</td>
+									<td id="nama-penerima">123123123</td>
+								</tr>
+								<tr>
+									<th class="row-header" scope="row">
+										Alamat Penerima
+									</th>
+									<td class="mid-header">:</td>
+									<td id="alamat-penerima">123123123</td>
+								</tr>
+								<tr>
+									<th class="row-header" scope="row">
+										Pool Pengirim
+									</th>
+									<td class="mid-header">:</td>
+									<td id="pool-pengirim">123123123</td>
+								</tr>
+								<tr>
+									<th class="row-header" scope="row">
+										Pool Penerima
+									</th>
+									<td class="mid-header">:</td>
+									<td id="pool-penerima">123123123</td>
+								</tr>
+								<tr>
+									<th class="row-head" scope="row">
+										Berat Paket
+									</th>
+									<td class="mid-header">:</td>
+									<td id="berat-paket">123123123123</td>
+								</tr>
+								<tr>
+									<th class="row-head" scope="row">
+										Harga Pengiriman
+									</th>
+									<td class="mid-header">:</td>
+									<td id="harga-pengiriman">123123123123</td>
+								</tr>
+								<tr>
+									<th class="row-head" scope="row">Kurir</th>
+									<td class="mid-header">:</td>
+									<td id="namaKurir">123123123123</td>
+								</tr>
+								<tr>
+									<th class="row-head" scope="row">
+										Tanggal Sampai
+									</th>
+									<td class="mid-header">:</td>
+									<td id="tanggal-sampai">123123123123</td>
+								</tr>
+								<tr></tr>
+								<tr>
+									<th class="row-head" scope="row">Status</th>
+									<td class="mid-header">:</td>
+									<td id="status">123123123123</td>
+								</tr>
+								<tr>
+									<th class="row-head" scope="row">
+										Pesan Gagal
+									</th>
+									<td class="mid-header">:</td>
+									<td
+										id="pesan-gagal"
+										style="font-style: italic"
+									>
+										123123123123
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
 
 		<!-- footer -->
 		<footer id="footer">
@@ -142,8 +260,7 @@
 			</div>
 		</footer>
 
-  
-    <!-- <script src="/admin/js/modal.js"></script> -->
+		<!-- <script src="/admin/js/modal.js"></script> -->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 		<script src="../../checkAuth.js "></script>
 

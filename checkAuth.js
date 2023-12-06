@@ -1,4 +1,4 @@
-const checkAuth = (role, url) => {
+function checkAuth(role, url) {
 	console.log("selected role", role);
 	const checkRole = () => {
 		if (role == "Admin") {
@@ -19,12 +19,12 @@ const checkAuth = (role, url) => {
 		return;
 	}
 	const jwtData = JSON.parse(atob(jwtToken.split(".")[1]));
-
+	console.log(jwtData);
 	const jwtRole =
 		jwtData["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"];
 
 	if (role == jwtRole) {
-		return jwtToken, jwtData;
+		return { jwtToken, jwtData };
 	} else {
 		alert(
 			"You don't have permissions to access this page! Please log in and try again"
@@ -32,4 +32,4 @@ const checkAuth = (role, url) => {
 		checkRole();
 		return;
 	}
-};
+}

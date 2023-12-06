@@ -11,15 +11,17 @@ packageWeight.addEventListener("input", async () => {
 });
 
 // get jwt to determine sendercity;
-
 const { jwtToken, jwtData } = checkAuth("Admin", window.location.href);
-
+console.log(jwtData);
 const inputSenderCity = document.getElementById("inputSenderCity");
 inputSenderCity.value = jwtData.pool_city;
+console.log(jwtData.pool_city);
 inputSenderCity.setAttribute("disabled", "disabled");
 // set sending date to today
 const today = new Date().toISOString().slice(0, 10);
 dateInput.value = today;
+
+document.addEventListener("DOMContentLoaded", () => {});
 submitBtn.addEventListener("click", (e) => {
 	e.preventDefault();
 

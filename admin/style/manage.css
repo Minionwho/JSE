@@ -1,102 +1,113 @@
 body {
-  min-height: 100vh;
+	min-height: 100vh;
 }
 
 nav {
-  font-family: "Raleway", sans-serif;
-  color: white !important;
+	font-family: "Raleway", sans-serif;
+	color: white !important;
 }
 
 nav .jse {
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 1.5rem;
-  color: #e21e2c;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 1.5rem;
+	color: #e21e2c;
 }
 
 nav .express {
-  font-weight: 500;
-  font-size: 1rem;
+	font-weight: 500;
+	font-size: 1rem;
 }
 
 .right-nav a:hover {
-  background-color: rgba(226, 30, 44, 0.7) !important;
-  color: white;
+	background-color: rgba(226, 30, 44, 0.7) !important;
+	color: white;
 }
 
-
 .deliver {
-  padding-top: 10px;
-  height: 32px;
-  width: 76px;
-  background-color: green;
+	padding-top: 10px;
+	height: 32px;
+	width: 76px;
+	background-color: green;
 }
 
 .cancel a {
-  color: white;
-  border: none;
-  text-decoration: none;
+	color: white;
+	border: none;
+	text-decoration: none;
 }
 
 .onprocess {
-  padding-top: 10px;
-  height: 32px;
-  background-color: yellow;
-  color: black;
+	padding-top: 10px;
+	height: 32px;
+	background-color: yellow;
+	color: black;
 }
 
 .info {
-  border: none;
-  text-decoration: none;
-  background-color: #5bc0de;
-  border-radius: 100px;
+	border: none;
+	text-decoration: none;
+	background-color: #5bc0de;
+	border-radius: 100px;
 }
 
 .i {
-  border: none;
-  text-decoration: none;
+	border: none;
+	text-decoration: none;
 }
 
 table .cancel button {
-  width: fit-content;
-  /* height: 20px; */
-  font-size: 13px;
-  color: white;
-  text-decoration: none;
-  border: none;
-  background-color: red;
-  transition: none;
+	width: fit-content;
+	/* height: 20px; */
+	font-size: 13px;
+	color: white;
+	text-decoration: none;
+	border: none;
+	background-color: red;
+	transition: none;
 }
 
 .logout {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 #footer {
-  display: flex;
-  background-color: #2b3035;
-  height: 0%;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  text-align: center;
-  color: white;
-  bottom: 0;
-  position: sticky;
-  top: 100%;
+	display: flex;
+	background-color: #2b3035;
+	height: 0%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	text-align: center;
+	color: white;
+	bottom: 0;
+	position: sticky;
+	top: 100%;
 }
 
 footer h3 {
-  font-size: 20px;
+	font-size: 20px;
 }
 
 footer img {
-  height: 40px;
-  width: 40px;
+	height: 40px;
+	width: 40px;
 }
 
 footer .content {
-  padding-top: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+	padding-top: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.row-header {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 50px;
+}
+
+.mid-header {
+	width: 5px;
+	text-align: center;
 }

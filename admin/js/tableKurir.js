@@ -1,22 +1,3 @@
-// var shipmentData = [
-//     { id: "#A218VT24", tanggal: "22 - 10 - 2023", status: "Delivered" },
-//     { id: "#B45CSH64", tanggal: "01 - 2 - 2023", status: "On Process" },
-//     { id: "#C12EAA38", tanggal: "13 - 3 - 2023", status: "Canceled" },
-//     { id: "#D421CD22", tanggal: "25 - 5 - 2023", status: "Back to Pool" }
-// ];
-
-// // Function to populate the table with data
-// function populateTable() {
-//     var tableBody = document.querySelector("#myTable tbody");
-
-//     shipmentData.forEach(function (shipment) {
-//         var row = tableBody.insertRow();
-//         row.innerHTML = `<th scope="row">${shipment.id}</th>
-//                         <td>${shipment.tanggal}</td>
-//                         <td>${getStatusBadge(shipment.status)}</td>`;
-//     });
-// }
-
 const endpoint = "https://localhost:7023/delivery";
 var shipmentData;
 
