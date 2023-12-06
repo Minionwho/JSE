@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link
@@ -18,8 +18,8 @@
 		/>
 		<title>Admin - Dispatch & Arrived</title>
 	</head>
-<body>
-    <nav
+	<body>
+		<nav
 			class="navbar navbar-dark navbar-expand-lg bg-body-tertiary"
 			style="background-color: #222 !important; color: white !important"
 		>
@@ -45,8 +45,12 @@
 					<div class="navbar-nav">
 						<a class="nav-link" href="create.html">Create</a>
 						<a class="nav-link" href="manage.html">Manage Admin</a>
-						<a class="nav-link" href="kurirManage.html">Manage Kurir</a>
-                        <a class="nav-link active" href="dispatchArrived.html">Dispatch</a>
+						<a class="nav-link" href="kurirManage.html"
+							>Manage Kurir</a
+						>
+						<a class="nav-link active" href="dispatchArrived.html"
+							>Dispatch</a
+						>
 					</div>
 					<div class="navbar-nav right-nav">
 						<a
@@ -67,18 +71,37 @@
 			</div>
 		</nav>
 
-        <div class="container pt-5">
-            <input id="trackingNumberInput" class="form-control form-control-lg" type="text" placeholder="Masukkan no Resi">
-        </div>
-    
-        <div class="container-button container pt-4">
-            <button id="dispatchButton" type="button" class="btn btn-primary" onclick="dispatch()">Dispatch</button>
-            <button id="arrivedButton" type="button" class="btn btn-success" onclick="arrived()">Arrived</button>
-        </div>
-    
-        <div id="message" class="message container pt-5"></div>
+		<div class="container pt-5">
+			<input
+				id="trackingNumberInput"
+				class="form-control form-control-lg"
+				type="text"
+				placeholder="Masukkan no Resi"
+			/>
+		</div>
 
-        <footer id="footer">
+		<div class="container-button container pt-4">
+			<button
+				id="dispatchButton"
+				type="button"
+				class="btn btn-primary"
+				onclick="dispatch()"
+			>
+				Dispatch
+			</button>
+			<button
+				id="arrivedButton"
+				type="button"
+				class="btn btn-success"
+				onclick="arrived()"
+			>
+				Arrived
+			</button>
+		</div>
+
+		<div id="message" class="message container pt-5"></div>
+
+		<footer id="footer">
 			<div class="container">
 				<h3>Download us at</h3>
 				<div class="imaga-logo">
@@ -100,13 +123,12 @@
 			</div>
 		</footer>
 
-        <script
+		<script
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
 			crossorigin="anonymous"
 		></script>
-        <script src="/admin/js/dispatchArrived.js"></script>
-		<script src="/checkAuth.js"></script>
-        
-</body>
+		<script src="../../checkAuth.js"></script>
+		<script src="/admin/js/dispatchArrived.js"></script>
+	</body>
 </html>
