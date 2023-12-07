@@ -53,6 +53,7 @@
 						<a class="nav-link active" href="currentDelivery.html"
 							>Delivery</a
 						>
+						<a class="nav-link" href="request.html">Request</a>
 					</div>
 					<div class="navbar-nav right-nav">
 						<a
@@ -77,44 +78,34 @@
 			<h2>Delivery Status</h2>
 			<div class="info">
 				<h5>Tracking Number</h5>
-				<h3 class="resi">ZVVF3R241SR123AEW1C</h3>
+				<h3 id="resi">ZVVF3R241SR123AEW1C</h3>
 			</div>
 			<div class="info">
 				<h5>Arrival date</h5>
-				<p class="date">dd/mm/yy</p>
+				<p id="date">dd/mm/yy</p>
 			</div>
 			<div class="info">
 				<h5>Nama penerima</h5>
-				<p class="date">John Locke</p>
+				<p id="nama-penerima">John Locke</p>
 			</div>
 			<div class="info">
 				<h5>Nomor telepon</h5>
-				<p class="date">0123456789</p>
+				<p id="nomor-telepon">0123456789</p>
 			</div>
 			<div class="info">
 				<h5>Alamat penerima</h5>
-				<p class="date">alamat</p>
+				<p id="alamat">alamat</p>
 			</div>
 			<div class="info">
 				<h5>Delivery Status</h5>
 				<form action="">
 					<input
 						type="radio"
-						id="onProcess"
-						name="status"
-						value="onProcess"
-						onchange="toggleStatus('on-process')"
-						checked
-					/>
-					<label class="status-label label-1" for="onProcess"
-						>on process</label
-					>
-					<input
-						type="radio"
 						id="delivered"
 						name="status"
 						value="delivered"
 						onchange="toggleStatus('delivered')"
+						checked
 					/>
 					<label class="status-label label-2" for="delivered"
 						>delivered</label
@@ -131,46 +122,11 @@
 					>
 				</form>
 			</div>
-			<!------------------------------------------ ON PROCESS ------------------------------------------->
-			<div class="on-process">
-				<h2>On Process</h2>
-				<form action="">
-					<div class="mb-3 row">
-						<label
-							for="inputMessage"
-							class="col-sm-2 col-form-label"
-							>Delivery Message</label
-						>
-						<div class="col-sm-6">
-							<textarea
-								class="form-control"
-								id="inputMessage"
-							></textarea>
-						</div>
-					</div>
-					<button type="submit" class="btn btn-primary">
-						Update Status
-					</button>
-				</form>
-			</div>
+
 			<!------------------------------------------- DELIVERED -------------------------------------------->
-			<div class="delivered" style="display: none">
+			<div class="delivered">
 				<h2>Delivered</h2>
-				<form action="">
-					<div class="mb-3 row">
-						<label
-							for="inputIntendedReceiver"
-							class="col-sm-2 col-form-label"
-							>Intended receiver name</label
-						>
-						<div class="col-sm-6">
-							<input
-								type="text"
-								class="form-control"
-								id="inputIntendedReceiver"
-							/>
-						</div>
-					</div>
+				<form action="" id="packagedDeliveredForm">
 					<div class="mb-3 row">
 						<label
 							for="inputActualReceiver"
@@ -194,6 +150,8 @@
 								class="form-control"
 								type="file"
 								id="formFile"
+								name="image"
+								accept="image/*"
 							/>
 						</div>
 					</div>

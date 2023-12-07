@@ -47,10 +47,6 @@ function populateTable(callback) {
 		.catch((error) => {
 			console.error("Error fetching data from API:", error);
 		});
-
-	if (typeof callback === "function") {
-		callback();
-	}
 }
 
 // Function to generate status badge based on status
