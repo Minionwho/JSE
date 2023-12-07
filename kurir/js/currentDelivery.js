@@ -133,37 +133,39 @@ document.addEventListener("DOMContentLoaded", () => {
 					});
 			});
 	});
-	packageFailedForm.addEventListener("submit", (event) => {
+	packagedFailedForm.addEventListener("submit", (event) => {
 		event.preventDefault();
 
 		const reasonText = document.getElementById("alasanGagalKirim").value;
 
-		const baseURL = "http://127.0.0.1:5500/delivery/failedDelivery";
-
+		const baseURL = "https://localhost:7023/delivery/failedDelivery";
+		console.log(baseURL);
+		const failedBody = {
+			tracking_number: deliveryData().tracking_number,
+			reason: reasonText,
+		};
 		const options = {
 			method: "PATCH",
 			headers: {
 				Authorization: `bearer ${jwtToken}`,
 				"Content-Type": "application/json",
 			},
-			body: {
-				tracking_number: deliveryData().tracking_number,
-				reason: reasonText,
-			},
+			body: JSON.stringify(failedBody),
 		};
 
-		fetch(baseURL, options).then((response) => {
-			if (response.ok) {
-				alert(
-					"Delivery failed request sent, Waiting for admin aproval."
-				);
-				window.location.assign("/kurir/history.html");
-				return response.json();
-			} else {
-				return response.json((err) => {
-					throw new Error(err.message);
-				});
-			}
-		});
+		fetch(baseURL, options)
+			.then((response) => {
+				if (response.status == 200) {
+					alert(
+						"Delivery failed request sent, Waiting for admin aproval."
+					);
+					return response.json((json) => console.log(json));
+				} else {
+					return response.json((err) => {
+						throw new Error(err.message);
+					});
+				}
+			})
+			.catch((err) => console.log(err));
 	});
 });
