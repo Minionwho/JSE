@@ -9,9 +9,10 @@ function populateTable() {
 	fetch(endpoint)
 		.then((response) => response.json())
 		.then((data) => {
+			console.log(data);
 			// Periksa apakah data dari API tidak kosong
 			if (data && data.length > 0) {
-				data.forEach(function (shipment) {
+				data.forEach((shipment) => {
 					let row = tableBody.insertRow();
 					row.innerHTML = `<th scope="row">${
 						shipment.tracking_number
@@ -44,35 +45,35 @@ function getStatusBadge(delivery_status) {
 
 	switch (delivery_status) {
 		case "package_delivered":
-			badgeClass = "deliver badge badge-success";
+			badgeClass = "deliver badge text-bg-success";
 			badgeContent = "Delivered";
 			break;
 		case "delivery_failed":
-			badgeClass = "cancel badge badge-danger";
-			badgeContent = '<a href="/index.html">Canceled</a>';
+			badgeClass = "cancel";
+			badgeContent = `<button type="button" class="btn btn-secondary popover-trigger" data-bs-toggle="popover" data-bs-placement="top" title="Alasan Cancel" data-bs-content="${shipment.fail_message}">Cancel</button>`;
 			break;
 		case "returned_to_pool":
-			badgeClass = "cancel badge badge-danger";
-			badgeContent = '<a href="/index.html">Canceled</a>';
+			badgeClass = "cancel";
+			badgeContent = `<button type="button" class="btn btn-secondary popover-trigger" data-bs-toggle="popover" data-bs-placement="top" title="Alasan Cancel" data-bs-content="${shipment.fail_message}">Cancel</button>`;
 			break;
 		case "on_sender_pool":
-			badgeClass = "onprocess badge badge-warning";
-			badgeContent = "On Process";
+			badgeClass = "onprocess badge text-bg-warning";
+			badgeContent = `On Process`;
 			break;
 		case "dispatched":
-			badgeClass = "onprocess badge badge-warning";
+			badgeClass = "badge text-bg-warning";
 			badgeContent = "On Process";
 			break;
 		case "on_destination_pool":
-			badgeClass = "onprocess badge badge-warning";
+			badgeClass = "onprocess badge text-bg-warning";
 			badgeContent = "On Process";
 			break;
 		case "otw_receiver_address":
-			badgeClass = "onprocess badge badge-warning";
-			badgeContent = "On Process";
+			badgeClass = "onprocess badge text-bg-primary";
+			badgeContent = "With Courier";
 			break;
 		default:
-			badgeClass = "badge badge-secondary";
+			badgeClass = "badge text-bg-secondary";
 			badgeContent = "Unknown";
 	}
 

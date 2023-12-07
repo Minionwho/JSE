@@ -1,4 +1,4 @@
-const endpoint = "https://localhost:7023/delivery";
+const endpoint = "https://localhost:7023/delivery/admin_pool";
 let shipmentData;
 let message;
 
@@ -22,7 +22,7 @@ function populateTable(callback) {
 	let tableBody = document.querySelector("#myTable tbody");
 
 	// Ganti URL_API dengan URL sesuai dengan API yang ingin Anda gunakan
-	fetch(endpoint)
+	fetch(endpoint, { headers: { Authorization: `bearer ${jwtToken}` } })
 		.then((response) => response.json())
 		.then((data) => {
 			// Periksa apakah data dari API tidak kosong
@@ -32,7 +32,11 @@ function populateTable(callback) {
 					let row = tableBody.insertRow();
 					row.innerHTML = `
                             <th scope="row">${shipment.tracking_number}</th>
-                            <td>${shipment.Courier.courier_username}</td>
+                            <td>${
+								shipment.Courier
+									? shipment.Courier.courier_username
+									: "Not assigned!"
+							}</td>
                             <td class="onprocess popover-trigger">${getStatusBadge(
 								shipment
 							)}</td>`;
@@ -58,7 +62,7 @@ function getStatusBadge(shipment) {
 
 	switch (shipment.delivery_status) {
 		case "package_delivered":
-			badgeClass = "deliver badge badge-success";
+			badgeClass = "deliver badge text-bg-success";
 			badgeContent = "Delivered";
 			break;
 		case "delivery_failed":
@@ -70,23 +74,23 @@ function getStatusBadge(shipment) {
 			badgeContent = `<button type="button" class="btn btn-secondary popover-trigger" data-bs-toggle="popover" data-bs-placement="top" title="Alasan Cancel" data-bs-content="${shipment.fail_message}">Cancel</button>`;
 			break;
 		case "on_sender_pool":
-			badgeClass = "onprocess badge badge-warning";
+			badgeClass = "onprocess badge text-bg-warning";
 			badgeContent = `On Process`;
 			break;
 		case "dispatched":
-			badgeClass = "onprocess badge badge-warning";
+			badgeClass = "badge text-bg-warning";
 			badgeContent = "On Process";
 			break;
 		case "on_destination_pool":
-			badgeClass = "onprocess badge badge-warning";
+			badgeClass = "onprocess badge text-bg-warning";
 			badgeContent = "On Process";
 			break;
 		case "otw_receiver_address":
-			badgeClass = "onprocess badge badge-warning";
-			badgeContent = "On Process";
+			badgeClass = "onprocess badge text-bg-primary";
+			badgeContent = "With Courier";
 			break;
 		default:
-			badgeClass = "badge badge-secondary";
+			badgeClass = "badge text-bg-secondary";
 			badgeContent = "Unknown";
 	}
 
@@ -169,16 +173,57 @@ function handleOnClickMoreInfo(event) {
 
 document.addEventListener("DOMContentLoaded", function () {
 	populateTable();
+	const searchForm = document.getElementById("searchInput");
+	searchForm.addEventListener("submit", (event) => {
+		event.preventDefault();
+		searchTable();
+	});
+	searchForm.addEventListener("input", (event) => {
+		event.preventDefault();
+		searchTable();
+	});
 });
 
-const searchForm = document.getElementById("searchForm");
-searchForm.addEventListener("submit", (event) => {
-	event.preventDefault();
-	searchTable();
-});
-searchForm.addEventListener("input", (event) => {
-	event.preventDefault();
-	searchTable();
+const assignDeliveries = document.getElementById("assign");
+
+assignDeliveries.addEventListener("click", () => {
+	const baseURL = "https://localhost:7023/delivery/assignDeliveries";
+	const headers = {
+		method: "POST",
+		headers: { Authorization: `bearer ${jwtToken}` },
+		body: "",
+	};
+	let tableBody = document.querySelector("#myTable tbody");
+
+	fetch(baseURL, headers)
+		.then((response) => {
+			return response.json();
+		})
+		.then((data) => {
+			if (data && data.length > 0) {
+				setDeliveryData(data);
+
+				window.location.reload();
+				// let row = tableBody.insertRow();
+				// row.innerHTML = `<td scope="row" colspan="3">ASSIGNED COURIERS:</td>`;
+				// data.forEach(function (shipment) {
+				// 	let row = tableBody.insertRow();
+				// 	row.innerHTML = `
+				//             <th scope="row">${shipment.tracking_number}</th>
+				//             <td>${shipment.courier_name}</td>
+				//             <td class="onprocess popover-trigger">${getStatusBadge(
+				// 				"otw_receiver_address"
+				// 			)}</td>`;
+				// });
+				// initializePopovers();
+			} else {
+				console.error("Error: Data from API is undefined or empty.");
+			}
+		})
+		.catch((error) => {
+			console.error("Error fetching data from API:", error);
+			alert("Error fetching data from API:", error);
+		});
 });
 
 function logout() {
