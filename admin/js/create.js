@@ -17,6 +17,7 @@ const inputSenderCity = document.getElementById("inputSenderCity");
 inputSenderCity.value = jwtData.pool_city;
 console.log(jwtData.pool_city);
 inputSenderCity.setAttribute("disabled", "disabled");
+
 // set sending date to today
 const today = new Date().toISOString().slice(0, 10);
 dateInput.value = today;
