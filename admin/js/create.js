@@ -17,6 +17,7 @@ const inputSenderCity = document.getElementById("inputSenderCity");
 inputSenderCity.value = jwtData.pool_city;
 console.log(jwtData.pool_city);
 inputSenderCity.setAttribute("disabled", "disabled");
+
 // set sending date to today
 const today = new Date().toISOString().slice(0, 10);
 dateInput.value = today;
@@ -42,7 +43,7 @@ submitBtn.addEventListener("click", (e) => {
   const receiverAddress = document.getElementById("inputReceiverAddress").value;
   const receiverPhone = document.getElementById("inputReceiverPhone").value;
   const receiverCity = document.getElementById("inputReceiverCity").value;
-  let resi, serviceType;
+  let serviceType;
 
   for (let i = 0; i < serviceTypes.length; i++) {
     if (serviceTypes[i].checked) serviceType = serviceTypes[i].value;

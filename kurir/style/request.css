@@ -26,8 +26,8 @@ nav .express {
   color: white;
 }
 
-.information {
-  margin-bottom: 3rem;
+.total-cost {
+  margin-bottom: 4rem;
 }
 
 .container h2 {
@@ -56,16 +56,22 @@ button:focus {
   background-color: #ff4351 !important;
 }
 
-button:disabled {
-  background-color: rgba(226, 30, 44, 0.7) !important;
-}
-
 .info {
   margin-bottom: 1rem;
 }
 
 .information p {
   font-size: 20px;
+}
+
+.total-cost h2 {
+  margin-top: 3rem;
+  font-weight: 700;
+  color: #e21e2c;
+  font-family: "Raleway", sans-serif;
+}
+.total-cost .cost {
+  color: black;
 }
 
 #footer {

@@ -16,7 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Poppins:wght@100;200;300;400;500;600;700&family=Raleway:wght@300;400;500;600;700;800&family=Roboto+Condensed:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
-    <title>Kurir - Delivery Status</title>
+    <title>Kurir - Request Delivery</title>
   </head>
   <body>
     <nav
@@ -64,36 +64,39 @@
         </div>
       </div>
     </nav>
+    <!---------------------------------------------- REQUEST ---------------------------------------------->
+
     <div class="container request-delivery">
-      <h2>You do not have any current deliveries!</h2>
+      <h2 class="req-message"></h2>
       <form id="form">
         <button type="submit" class="submit btn btn-primary">
           Request Delivery
         </button>
       </form>
     </div>
+    <hr />
     <!---------------------------------------------- INFORMATION ---------------------------------------------->
-    <div class="container information" style="display: none">
+    <div class="container information">
       <!------------ Package Information ------------->
       <h2>Package Information</h2>
       <div class="row g-3 info">
         <div class="col-lg-6">
           <h5>Tracking Number</h5>
-          <h3 class="resi">ZVVF3R241SR123AEW1C</h3>
+          <h3 class="resi"></h3>
         </div>
         <div class="col-lg-6">
-          <h5>Arrival date</h5>
-          <p class="date">dd/mm/yy</p>
+          <h5>Sending date</h5>
+          <p class="sending-date"></p>
         </div>
       </div>
       <div class="row g-3 info">
         <div class="col-lg-6">
           <h5>Service type</h5>
-          <p class="service-type">Reguler</p>
+          <p class="service-type"></p>
         </div>
         <div class="col-lg-6">
           <h5>Package weight (kg)</h5>
-          <p class="package-weight">1.2</p>
+          <p class="package-weight"></p>
         </div>
       </div>
 
@@ -102,21 +105,21 @@
       <div class="row g-3 info">
         <div class="col-lg-6">
           <h5>Sender name</h5>
-          <h3 class="sender-name">John Locke</h3>
+          <h3 class="sender-name"></h3>
         </div>
         <div class="col-lg-6">
           <h5>Sender address</h5>
-          <p class="sender-address">address</p>
+          <p class="sender-address"></p>
         </div>
       </div>
       <div class="row g-3 info">
         <div class="col-lg-6">
           <h5>Sender phone</h5>
-          <p class="sender-phone">123123</p>
+          <p class="sender-phone"></p>
         </div>
         <div class="col-lg-6">
           <h5>Sender city</h5>
-          <p class="sender-city">Depok</p>
+          <p class="sender-city"></p>
         </div>
       </div>
 
@@ -125,24 +128,30 @@
       <div class="row g-3 info">
         <div class="col-lg-6">
           <h5>Intended receiver name</h5>
-          <h3 class="intended-receiver-name">Locke</h3>
+          <h3 class="intended-receiver-name"></h3>
         </div>
         <div class="col-lg-6">
           <h5>Receiver address</h5>
-          <p class="receiver-address">address</p>
+          <p class="receiver-address"></p>
         </div>
       </div>
       <div class="row g-3 info">
         <div class="col-lg-6">
           <h5>Receiver phone</h5>
-          <p class="receiver-phone">321321</p>
+          <p class="receiver-phone"></p>
         </div>
         <div class="col-lg-6">
           <h5>Receiver city</h5>
-          <p class="receiver-city">Tangerang</p>
+          <p class="receiver-city"></p>
         </div>
       </div>
+      <div class="total-cost">
+        <h2>Total Cost</h2>
+        <h3 class="cost"></h3>
+      </div>
     </div>
+
+    <!---------------------------------------------- FOOTER ---------------------------------------------->
     <footer id="footer">
       <div class="container">
         <h3>Download us at</h3>
