@@ -5,7 +5,10 @@ $(document).ready(function () {
 
 		// Get the user input from the input field
 		const userInput = $("#trackingNumber").val();
-
+		if (userInput.length == 0) {
+			alert("You must insert tracking number!");
+			return;
+		}
 		// Build the URL with the query parameter
 		const url = `customer/tracking.html?tracking_number=${userInput}`;
 
