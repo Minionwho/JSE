@@ -29,9 +29,18 @@ function populateTable(callback) {
 			if (data && data.length > 0) {
 				setDeliveryData(data);
 				data.forEach(function (shipment) {
+					let direction = "";
+					if (jwtData.pool_city === shipment.pool_sender_city) {
+						direction = "Inbound";
+					} else if (
+						jwtData.pool_city === shipment.pool_receiver_city
+					) {
+						direction = "Outbound";
+					}
 					let row = tableBody.insertRow();
 					row.innerHTML = `
                             <th scope="row">${shipment.tracking_number}</th>
+                            <td>${direction}</td>
                             <td>${shipment.sender_name}</td>
                             <td>${shipment.intended_receiver_name}</td>
                             <td>${shipment.receiver_address}</td>
