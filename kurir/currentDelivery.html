@@ -1,246 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-			rel="stylesheet"
-			integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-			crossorigin="anonymous"
-		/>
-		<link rel="stylesheet" href="style/currentDelivery.css" />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Poppins:wght@100;200;300;400;500;600;700&family=Raleway:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap"
-			rel="stylesheet"
-		/>
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Poppins:wght@100;200;300;400;500;600;700&family=Raleway:wght@300;400;500;600;700;800&family=Roboto+Condensed:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap"
-			rel="stylesheet"
-		/>
-		<title>Kurir - Delivery Status</title>
-	</head>
-	<body>
-		<nav
-			class="navbar navbar-dark navbar-expand-lg bg-body-tertiary"
-			style="background-color: #222 !important; color: white !important"
-		>
-			<div class="container-fluid container">
-				<a class="navbar-brand" href="../index.html"
-					><span class="jse">JSE</span
-					><span class="express">express</span></a
-				><button
-					class="navbar-toggler"
-					type="button"
-					data-bs-toggle="collapse"
-					data-bs-target="#navbarNavAltMarkup"
-					aria-controls="navbarNavAltMarkup"
-					aria-expanded="false"
-					aria-label="Toggle navigation"
-				>
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div
-					class="collapse navbar-collapse justify-content-between"
-					id="navbarNavAltMarkup"
-				>
-					<div class="navbar-nav">
-						<a class="nav-link" href="history.html">History</a>
-						<a class="nav-link active" href="currentDelivery.html"
-							>Delivery</a
-						>
-						<a class="nav-link" href="request.html">Request</a>
-					</div>
-					<div class="navbar-nav right-nav">
-						<a
-							class="nav-link logout"
-							style="
-								background-color: #e21e2c;
-								color: white;
-								font-size: 14px;
-								font-weight: 500;
-								padding: 6px 20px;
-								border-radius: 3px;
-							"
-							onclick="logout()"
-							>Logout</a
-						>
-					</div>
-				</div>
-			</div>
-		</nav>
-		<!---------------------------------------------- STATUS ---------------------------------------------->
-		<div class="container container-status">
-			<h2>Delivery Status</h2>
-			<div class="info">
-				<h5>Tracking Number</h5>
-				<h3 id="resi">ZVVF3R241SR123AEW1C</h3>
-			</div>
-			<div class="info">
-				<h5>Arrival date</h5>
-				<p id="date">dd/mm/yy</p>
-			</div>
-			<div class="info">
-				<h5>Nama penerima</h5>
-				<p id="nama-penerima">John Locke</p>
-			</div>
-			<div class="info">
-				<h5>Nomor telepon</h5>
-				<p id="nomor-telepon">0123456789</p>
-			</div>
-			<div class="info">
-				<h5>Alamat penerima</h5>
-				<p id="alamat">alamat</p>
-			</div>
-			<div class="info">
-				<h5>Delivery Status</h5>
-				<form action="">
-					<input
-						type="radio"
-						id="delivered"
-						name="status"
-						value="delivered"
-						onchange="toggleStatus('delivered')"
-						checked
-					/>
-					<label class="status-label label-2" for="delivered"
-						>delivered</label
-					>
-					<input
-						type="radio"
-						id="cancelled"
-						name="status"
-						value="cancelled"
-						onchange="toggleStatus('cancelled')"
-					/>
-					<label class="status-label label-3" for="cancelled"
-						>cancelled</label
-					>
-				</form>
-			</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style/currentDelivery.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Poppins:wght@100;200;300;400;500;600;700&family=Raleway:wght@300;400;500;600;700;800&family=Roboto+Condensed:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Kurir - Delivery Status</title>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-dark navbar-expand-lg bg-body-tertiary"
+      style="background-color: #222 !important; color: white !important"
+    >
+      <div class="container-fluid container">
+        <a class="navbar-brand" href="../index.html"
+          ><span class="jse">JSE</span><span class="express">express</span></a
+        ><button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-between"
+          id="navbarNavAltMarkup"
+        >
+          <div class="navbar-nav">
+            <a class="nav-link" href="history.html">History</a>
+            <a class="nav-link active" href="currentDelivery.html">Delivery</a>
+            <a class="nav-link" href="request.html">Request</a>
+          </div>
+          <div class="navbar-nav right-nav">
+            <a
+              class="nav-link logout"
+              style="
+                background-color: #e21e2c;
+                color: white;
+                font-size: 14px;
+                font-weight: 500;
+                padding: 6px 20px;
+                border-radius: 3px;
+              "
+              onclick="logout()"
+              >Logout</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!---------------------------------------------- STATUS ---------------------------------------------->
+    <div class="container container-status">
+      <h2>Delivery Status</h2>
+      <div class="info">
+        <h5>Tracking Number</h5>
+        <h3 id="resi">ZVVF3R241SR123AEW1C</h3>
+      </div>
+      <div class="info">
+        <h5>Arrival date</h5>
+        <p id="date">dd/mm/yy</p>
+      </div>
+      <div class="info">
+        <h5>Nama penerima</h5>
+        <p id="nama-penerima">John Locke</p>
+      </div>
+      <div class="info">
+        <h5>Nomor telepon</h5>
+        <p id="nomor-telepon">0123456789</p>
+      </div>
+      <div class="info">
+        <h5>Alamat penerima</h5>
+        <p id="alamat">alamat</p>
+      </div>
+      <div class="info">
+        <h5>Delivery Status</h5>
+        <form action="">
+          <input
+            type="radio"
+            id="delivered"
+            name="status"
+            value="delivered"
+            onchange="toggleStatus('delivered')"
+            checked
+          />
+          <label class="status-label label-2" for="delivered">delivered</label>
+          <input
+            type="radio"
+            id="cancelled"
+            name="status"
+            value="cancelled"
+            onchange="toggleStatus('cancelled')"
+          />
+          <label class="status-label label-3" for="cancelled">cancelled</label>
+        </form>
+      </div>
 
-			<!------------------------------------------- DELIVERED -------------------------------------------->
-			<div class="delivered">
-				<h2>Delivered</h2>
-				<form action="" id="packagedDeliveredForm">
-					<div class="mb-3 row">
-						<label
-							for="inputActualReceiver"
-							class="col-sm-2 col-form-label"
-							>Actual receiver name</label
-						>
-						<div class="col-sm-6">
-							<input
-								type="text"
-								class="form-control"
-								id="inputActualReceiver"
-							/>
-						</div>
-					</div>
-					<div class="mb-3 row">
-						<label for="formFile" class="col-sm-2 col-form-label"
-							>Upload Image</label
-						>
-						<div class="col-sm-6">
-							<input
-								class="form-control"
-								type="file"
-								id="formFile"
-								name="image"
-								accept="image/*"
-							/>
-						</div>
-					</div>
-					<button type="submit" class="btn btn-primary">
-						Update Status
-					</button>
-				</form>
-			</div>
-			<!------------------------------------------- CANCELLED -------------------------------------------->
-			<div class="cancelled" style="display: none">
-				<h2>Cancelled</h2>
-				<form action="">
-					<div class="mb-3 row">
-						<label
-							for="alasanGagalKirim"
-							class="col-sm-2 col-form-label"
-							>Alasan gagal kirim</label
-						>
-						<div class="col-sm-6">
-							<textarea
-								class="form-control"
-								id="alasanGagalKirim"
-							></textarea>
-						</div>
-					</div>
-					<div class="mb-3 row">
-						<label
-							for="inputReturnedPool"
-							class="col-sm-2 col-form-label"
-							>Returned pool</label
-						>
-						<div class="col-sm-2">
-							<select id="inputReturnedPool" class="form-select">
-								<option>Jakarta</option>
-								<option>Tangerang</option>
-								<option>Depok</option>
-								<option>Bogor</option>
-							</select>
-						</div>
-					</div>
-					<div class="mb-3 row">
-						<label
-							for="returnedStatus"
-							class="col-sm-2 col-form-label"
-							>Returned status</label
-						>
-						<div class="col-sm-6">
-							<input
-								type="text"
-								readonly
-								class="form-control-plaintext"
-								id="returnedStatus"
-								value="true"
-							/>
-						</div>
-					</div>
-					<button type="submit" class="btn btn-primary">
-						Update Status
-					</button>
-				</form>
-			</div>
-		</div>
-		<footer id="footer">
-			<div class="container">
-				<h3>Download us at</h3>
-				<div class="imaga-logo">
-					<img src="../../src/images/Googleplay.png" alt="" />
-					<img
-						src="../../src/images/Applestore-removebg-preview.png"
-						alt=""
-					/>
-				</div>
-				<div class="content">
-					<h3>
-						© 2023 JSE - Melacak Nomor Resi dengan Presisi. Hak
-						Cipta Dilindungi.
-					</h3>
-					<h3>Hubungi Kami</h3>
-					<h3>08123141237234</h3>
-					<h3>JSEContact@gmail.com</h3>
-				</div>
-			</div>
-		</footer>
-		<script src="../checkAuth.js"></script>
-		<script src="js/currentDelivery.js"></script>
-		<script
-			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-			integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-			crossorigin="anonymous"
-		></script>
-	</body>
+      <!------------------------------------------- DELIVERED -------------------------------------------->
+      <div class="delivered">
+        <h2>Delivered</h2>
+        <form action="" id="packagedDeliveredForm">
+          <div class="mb-3 row">
+            <label for="inputActualReceiver" class="col-sm-2 col-form-label"
+              >Actual receiver name</label
+            >
+            <div class="col-sm-6">
+              <input
+                type="text"
+                class="form-control"
+                id="inputActualReceiver"
+              />
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="formFile" class="col-sm-2 col-form-label"
+              >Upload Image</label
+            >
+            <div class="col-sm-6">
+              <input
+                class="form-control"
+                type="file"
+                id="formFile"
+                name="image"
+                accept="image/*"
+              />
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Update Status</button>
+        </form>
+      </div>
+      <!------------------------------------------- CANCELLED -------------------------------------------->
+      <div class="cancelled" style="display: none">
+        <h2>Cancelled</h2>
+        <form action="">
+          <div class="mb-3 row">
+            <label for="alasanGagalKirim" class="col-sm-2 col-form-label"
+              >Alasan gagal kirim</label
+            >
+            <div class="col-sm-6">
+              <textarea class="form-control" id="alasanGagalKirim"></textarea>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="inputReturnedPool" class="col-sm-2 col-form-label"
+              >Returned pool</label
+            >
+            <div class="col-sm-2">
+              <select id="inputReturnedPool" class="form-select">
+                <option>Jakarta</option>
+                <option>Tangerang</option>
+                <option>Depok</option>
+                <option>Bogor</option>
+              </select>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="returnedStatus" class="col-sm-2 col-form-label"
+              >Returned status</label
+            >
+            <div class="col-sm-6">
+              <input
+                type="text"
+                readonly
+                class="form-control-plaintext"
+                id="returnedStatus"
+                value="true"
+              />
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Update Status</button>
+        </form>
+      </div>
+    </div>
+    <footer id="footer">
+      <div class="container">
+        <h3>Download us at</h3>
+        <div class="imaga-logo">
+          <img src="../../src/images/Googleplay.png" alt="" />
+          <img src="../../src/images/Applestore-removebg-preview.png" alt="" />
+        </div>
+        <div class="content">
+          <h3>
+            © 2023 JSE - Melacak Nomor Resi dengan Presisi. Hak Cipta
+            Dilindungi.
+          </h3>
+          <h3>Hubungi Kami</h3>
+          <h3>08123141237234</h3>
+          <h3>JSEContact@gmail.com</h3>
+        </div>
+      </div>
+    </footer>
+    <script src="../checkAuth.js"></script>
+    <script src="js/currentDelivery.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

@@ -74,7 +74,7 @@ input[type="radio"] {
   transition: background-color 0.5s;
 }
 
-.on-process h2 {
+/* .on-process h2 {
   color: #fbbc04;
   font-weight: 600;
   margin-top: 3rem;
@@ -93,7 +93,7 @@ input[type="radio"] {
 .on-process button:hover,
 .on-process button:focus {
   background-color: #ff4351 !important;
-}
+} */
 
 .delivered h2 {
   color: #55cc77;

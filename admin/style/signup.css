@@ -96,7 +96,7 @@ i {
   box-sizing: border-box;
 }
 
-img {
+.right img {
   width: 35px;
   position: absolute;
   top: 30px;
