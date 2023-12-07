@@ -78,30 +78,33 @@
 				type="text"
 				placeholder="Masukkan no Resi"
 			/>
+			<div class="container-button container pt-4">
+				<button
+					id="dispatchButton"
+					type="button"
+					class="btn btn-lg btn-primary"
+				>
+					Dispatch
+				</button>
+				<button
+					id="arrivedButton"
+					type="button"
+					class="btn btn-lg btn-success"
+				>
+					Arrived
+				</button>
+				<button
+					id="returnedToPoolButton"
+					type="button"
+					class="btn btn-lg btn-danger"
+				>
+					Returned to Pool
+				</button>
+			</div>
+			<div id="message-container"></div>
 		</div>
 
-		<div class="container-button container pt-4">
-			<button
-				id="dispatchButton"
-				type="button"
-				class="btn btn-primary"
-				onclick="dispatch()"
-			>
-				Dispatch
-			</button>
-			<button
-				id="arrivedButton"
-				type="button"
-				class="btn btn-success"
-				onclick="arrived()"
-			>
-				Arrived
-			</button>
-		</div>
-
-		<div id="message" class="container message pt-5">
-
-		</div>
+		<!-- <div id="message" class="container message pt-5"></div> -->
 
 		<footer id="footer">
 			<div class="container">

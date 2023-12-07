@@ -32,7 +32,7 @@ function populateTable(callback) {
 					let row = tableBody.insertRow();
 					row.innerHTML = `
                             <th scope="row">${shipment.tracking_number}</th>
-                            <td>${shipment.Courier}</td>
+                            <td>${shipment.Courier.courier_username}</td>
                             <td class="onprocess popover-trigger">${getStatusBadge(
 								shipment
 							)}</td>`;
@@ -121,6 +121,13 @@ function displayInfoModal(shipmentData) {
 	const status = document.getElementById("status");
 	const pesanGagal = document.getElementById("pesan-gagal");
 
+	const messages = shipmentData.Messages;
+	messages.sort((a, b) => {
+		const dateb = new Date(b.timestamp);
+		const datea = new Date(a.timestamp);
+		return dateb.getTime() - datea.getTime();
+	});
+
 	nomorResi.innerText = shipmentData.tracking_number;
 	tanggalPengiriman.innerText = shipmentData.sending_date;
 	tipePengiriman.innerText = shipmentData.service_type;
@@ -137,8 +144,7 @@ function displayInfoModal(shipmentData) {
 	tanggalSampai.innerText = shipmentData.arrival_date
 		? shipmentData.arrival_date
 		: "N/A";
-	status.innerText =
-		shipmentData.Messages[shipmentData.Messages.length - 1].message_text;
+	status.innerText = messages[0].message_text;
 	pesanGagal.innerText = shipmentData.fail_message
 		? shipmentData.fail_message
 		: "N/A";

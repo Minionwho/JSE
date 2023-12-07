@@ -1,9 +1,9 @@
 const endpoint = "https://localhost:7023/delivery";
-var shipmentData;
+let shipmentData;
 const { jwtToken, jwtData } = checkAuth("Courier", window.location.href);
 
 function populateTable() {
-	var tableBody = document.querySelector("#myTable tbody");
+	let tableBody = document.querySelector("#myTable tbody");
 
 	// Ganti URL_API dengan URL sesuai dengan API yang ingin Anda gunakan
 	fetch(endpoint)
@@ -12,7 +12,7 @@ function populateTable() {
 			// Periksa apakah data dari API tidak kosong
 			if (data && data.length > 0) {
 				data.forEach(function (shipment) {
-					var row = tableBody.insertRow();
+					let row = tableBody.insertRow();
 					row.innerHTML = `<th scope="row">${
 						shipment.tracking_number
 					}</th>
@@ -39,8 +39,8 @@ function populateTable() {
 
 // Function to generate status badge based on status
 function getStatusBadge(delivery_status) {
-	var badgeClass = "";
-	var badgeContent = "";
+	let badgeClass = "";
+	let badgeContent = "";
 
 	switch (delivery_status) {
 		case "package_delivered":
