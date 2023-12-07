@@ -33,3 +33,15 @@ function checkAuth(role, url) {
 		return;
 	}
 }
+
+function useState(defaultValue) {
+	let value = defaultValue;
+
+	function getValue() {
+		return value;
+	}
+	function setValue(newValue) {
+		value = newValue;
+	}
+	return [getValue, setValue];
+}

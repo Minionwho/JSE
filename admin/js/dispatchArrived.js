@@ -7,7 +7,8 @@ function dispatch() {
 
 	if (trackingNumber.trim() !== "") {
 		var apiUrl =
-			"https://localhost:7023/dispatch?tracking_number=" + trackingNumber;
+			"https://localhost:7023/delivery/dispatch?tracking_number=" +
+			trackingNumber;
 
 		fetch(apiUrl, {
 			method: "PATCH",
@@ -46,7 +47,8 @@ function arrived() {
 
 	if (trackingNumber.trim() !== "") {
 		var apiUrl =
-			"https://localhost:7023/arrived?tracking_number=" + trackingNumber;
+			"https://localhost:7023/delivery/arrived?tracking_number=" +
+			trackingNumber;
 
 		fetch(apiUrl, {
 			method: "PATCH",
