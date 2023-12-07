@@ -2,28 +2,6 @@ const { jwtToken, jwtData } = checkAuth("Courier", window.location.href);
 console.log(jwtData);
 
 // Package Information
-const resi = document.querySelector(".resi");
-const sendingDate = document.querySelector(".sending-date");
-const serviceType = document.querySelector(".service-type");
-const weight = document.querySelector(".package-weight");
-const totalCost = document.querySelector(".cost");
-
-// Sender Information
-const senderName = document.querySelector(".sender-name");
-const senderAddress = document.querySelector(".sender-address");
-const senderPhone = document.querySelector(".sender-phone");
-const senderCity = document.querySelector(".sender-city");
-
-// Receiver Information
-const intendedReceiverName = document.querySelector(".receiver-name");
-const receiverAddress = document.querySelector(".receiver-address");
-const receiverPhone = document.querySelector(".receiver-phone");
-const receiverCity = document.querySelector(".receiver-city");
-
-// Request Delivery
-const reqMessage = document.querySelector(".req-message");
-const submitBtn = document.querySelector(".submit");
-const informations = document.querySelector(".information");
 
 const currDeliveryUrl = "https://localhost:7023/courier/current_delivery";
 const currOptions = {
@@ -63,7 +41,30 @@ submitBtn.addEventListener("click", (e) => {
 			Authorization: `bearer ${jwtToken}`,
 		},
 	};
+	const resi = document.querySelector(".resi");
+	const sendingDate = document.querySelector(".sending-date");
+	const serviceType = document.querySelector(".service-type");
+	const weight = document.querySelector(".package-weight");
+	const totalCost = document.querySelector(".cost");
 
+	// Sender Information
+	const senderName = document.querySelector(".sender-name");
+	const senderAddress = document.querySelector(".sender-address");
+	const senderPhone = document.querySelector(".sender-phone");
+	const senderCity = document.querySelector(".sender-city");
+
+	// Receiver Information
+	const intendedReceiverName = document.querySelector(".receiver-name");
+	const receiverAddress = document.querySelector(".receiver-address");
+	const receiverPhone = document.querySelector(".receiver-phone");
+	const receiverCity = document.querySelector(".receiver-city");
+
+	// Request Delivery
+	const reqMessage = document.querySelector(".req-message");
+	const submitBtn = document.querySelector(".submit");
+	const informations = document.querySelector(".information");
+
+	toggleRequest(true);
 	// fetch /courier/request_delivery
 	fetch(reqDeliveryUrl, reqOptions)
 		.then((response) => {
@@ -77,7 +78,6 @@ submitBtn.addEventListener("click", (e) => {
 		})
 		.then((data) => {
 			console.log(data);
-			toggleRequest(true);
 			resi.innerHTML = data.tracking_number;
 			sendingDate.innerHTML = data.sending_date;
 			serviceType.innerHTML = data.service_type;

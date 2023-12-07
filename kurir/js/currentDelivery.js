@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				return response.json();
 			} else {
 				alert("You do not have any current deliveries!");
+				window.location.href = "/kurir/history.html";
 			}
 		})
 		.then((data) => {
