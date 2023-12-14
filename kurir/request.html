@@ -1,181 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="style/request.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Poppins:wght@100;200;300;400;500;600;700&family=Raleway:wght@300;400;500;600;700;800&family=Roboto+Condensed:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <title>Kurir - Request Delivery</title>
-  </head>
-  <body>
-    <nav
-      class="navbar navbar-dark navbar-expand-lg bg-body-tertiary"
-      style="background-color: #222 !important; color: white !important"
-    >
-      <div class="container-fluid container">
-        <a class="navbar-brand" href="../index.html"
-          ><span class="jse">JSE</span><span class="express">express</span></a
-        ><button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div
-          class="collapse navbar-collapse justify-content-between"
-          id="navbarNavAltMarkup"
-        >
-          <div class="navbar-nav">
-            <a class="nav-link" href="history.html">History</a>
-            <a class="nav-link" href="currentDelivery.html">Delivery</a>
-            <a class="nav-link active" href="request.html">Request</a>
-          </div>
-          <div class="navbar-nav right-nav">
-            <a
-              class="nav-link logout"
-              style="
-                background-color: #e21e2c;
-                color: white;
-                font-size: 14px;
-                font-weight: 500;
-                padding: 6px 20px;
-                border-radius: 3px;
-              "
-              onclick="logout()"
-              >Logout</a
-            >
-          </div>
-        </div>
-      </div>
-    </nav>
-    <!---------------------------------------------- REQUEST ---------------------------------------------->
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="style/request.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Poppins:wght@100;200;300;400;500;600;700&family=Raleway:wght@300;400;500;600;700;800&family=Roboto+Condensed:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap"
+			rel="stylesheet"
+		/>
+		<title>Kurir - Request Delivery</title>
+	</head>
+	<body>
+		<nav
+			class="navbar navbar-dark navbar-expand-lg bg-body-tertiary"
+			style="background-color: #222 !important; color: white !important"
+		>
+			<div class="container-fluid container">
+				<a class="navbar-brand" href="../index.html"
+					><span class="jse">JSE</span
+					><span class="express">express</span></a
+				><button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarNavAltMarkup"
+					aria-controls="navbarNavAltMarkup"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div
+					class="collapse navbar-collapse justify-content-between"
+					id="navbarNavAltMarkup"
+				>
+					<div class="navbar-nav">
+						<a class="nav-link" href="history.html">History</a>
+						<a class="nav-link" href="currentDelivery.html"
+							>Delivery</a
+						>
+						<a class="nav-link active" href="request.html"
+							>Request</a
+						>
+					</div>
+					<div class="navbar-nav right-nav">
+						<a
+							class="nav-link logout"
+							style="
+								background-color: #e21e2c;
+								color: white;
+								font-size: 14px;
+								font-weight: 500;
+								padding: 6px 20px;
+								border-radius: 3px;
+							"
+							onclick="logout()"
+							>Logout</a
+						>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<!---------------------------------------------- REQUEST ---------------------------------------------->
 
-    <div class="container request-delivery">
-      <h2 class="req-message"></h2>
-      <form id="form">
-        <button type="submit" class="submit btn btn-primary">
-          Request Delivery
-        </button>
-      </form>
-    </div>
-    <hr />
-    <!---------------------------------------------- INFORMATION ---------------------------------------------->
-    <div class="container information">
-      <!------------ Package Information ------------->
-      <h2>Package Information</h2>
-      <div class="row g-3 info">
-        <div class="col-lg-6">
-          <h5>Tracking Number</h5>
-          <h3 class="resi"></h3>
-        </div>
-        <div class="col-lg-6">
-          <h5>Sending date</h5>
-          <p class="sending-date"></p>
-        </div>
-      </div>
-      <div class="row g-3 info">
-        <div class="col-lg-6">
-          <h5>Service type</h5>
-          <p class="service-type"></p>
-        </div>
-        <div class="col-lg-6">
-          <h5>Package weight (kg)</h5>
-          <p class="package-weight"></p>
-        </div>
-      </div>
+		<div class="container request-delivery">
+			<h2 class="req-message"></h2>
+			<form id="form">
+				<button
+					type="submit"
+					id="submitBtn"
+					class="submit btn btn-primary"
+				>
+					Request Delivery
+				</button>
+			</form>
+		</div>
+		<hr />
+		<!---------------------------------------------- INFORMATION ---------------------------------------------->
+		<div class="container information">
+			<!------------ Package Information ------------->
+			<h2>Package Information</h2>
+			<div class="row g-3 info">
+				<div class="col-lg-6">
+					<h5>Tracking Number</h5>
+					<h3 class="resi"></h3>
+				</div>
+				<div class="col-lg-6">
+					<h5>Sending date</h5>
+					<p class="sending-date"></p>
+				</div>
+			</div>
+			<div class="row g-3 info">
+				<div class="col-lg-6">
+					<h5>Service type</h5>
+					<p class="service-type"></p>
+				</div>
+				<div class="col-lg-6">
+					<h5>Package weight (kg)</h5>
+					<p class="package-weight"></p>
+				</div>
+			</div>
 
-      <!------------- Sender Information -------------->
-      <h2>Sender Information</h2>
-      <div class="row g-3 info">
-        <div class="col-lg-6">
-          <h5>Sender name</h5>
-          <h3 class="sender-name"></h3>
-        </div>
-        <div class="col-lg-6">
-          <h5>Sender address</h5>
-          <p class="sender-address"></p>
-        </div>
-      </div>
-      <div class="row g-3 info">
-        <div class="col-lg-6">
-          <h5>Sender phone</h5>
-          <p class="sender-phone"></p>
-        </div>
-        <div class="col-lg-6">
-          <h5>Sender city</h5>
-          <p class="sender-city"></p>
-        </div>
-      </div>
+			<!------------- Sender Information -------------->
+			<h2>Sender Information</h2>
+			<div class="row g-3 info">
+				<div class="col-lg-6">
+					<h5>Sender name</h5>
+					<h3 class="sender-name"></h3>
+				</div>
+				<div class="col-lg-6">
+					<h5>Sender address</h5>
+					<p class="sender-address"></p>
+				</div>
+			</div>
+			<div class="row g-3 info">
+				<div class="col-lg-6">
+					<h5>Sender phone</h5>
+					<p class="sender-phone"></p>
+				</div>
+				<div class="col-lg-6">
+					<h5>Sender city</h5>
+					<p class="sender-city"></p>
+				</div>
+			</div>
 
-      <!------------ Receiver Information ------------->
-      <h2>Receiver Information</h2>
-      <div class="row g-3 info">
-        <div class="col-lg-6">
-          <h5>Intended receiver name</h5>
-          <h3 class="intended-receiver-name"></h3>
-        </div>
-        <div class="col-lg-6">
-          <h5>Receiver address</h5>
-          <p class="receiver-address"></p>
-        </div>
-      </div>
-      <div class="row g-3 info">
-        <div class="col-lg-6">
-          <h5>Receiver phone</h5>
-          <p class="receiver-phone"></p>
-        </div>
-        <div class="col-lg-6">
-          <h5>Receiver city</h5>
-          <p class="receiver-city"></p>
-        </div>
-      </div>
-      <div class="total-cost">
-        <h2>Total Cost</h2>
-        <h3 class="cost"></h3>
-      </div>
-    </div>
+			<!------------ Receiver Information ------------->
+			<h2>Receiver Information</h2>
+			<div class="row g-3 info">
+				<div class="col-lg-6">
+					<h5>Intended receiver name</h5>
+					<h3 class="intended-receiver-name"></h3>
+				</div>
+				<div class="col-lg-6">
+					<h5>Receiver address</h5>
+					<p class="receiver-address"></p>
+				</div>
+			</div>
+			<div class="row g-3 info">
+				<div class="col-lg-6">
+					<h5>Receiver phone</h5>
+					<p class="receiver-phone"></p>
+				</div>
+				<div class="col-lg-6">
+					<h5>Receiver city</h5>
+					<p class="receiver-city"></p>
+				</div>
+			</div>
+			<div class="total-cost">
+				<h2>Total Cost</h2>
+				<h3 class="cost"></h3>
+			</div>
+		</div>
 
-    <!---------------------------------------------- FOOTER ---------------------------------------------->
-    <footer id="footer">
-      <div class="container">
-        <h3>Download us at</h3>
-        <div class="imaga-logo">
-          <img src="../../src/images/Googleplay.png" alt="" />
-          <img src="../../src/images/Applestore-removebg-preview.png" alt="" />
-        </div>
-        <div class="content">
-          <h3>
-            © 2023 JSE - Melacak Nomor Resi dengan Presisi. Hak Cipta
-            Dilindungi.
-          </h3>
-          <h3>Hubungi Kami</h3>
-          <h3>08123141237234</h3>
-          <h3>JSEContact@gmail.com</h3>
-        </div>
-      </div>
-    </footer>
-    <script src="../checkAuth.js"></script>
-    <script src="js/request.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+		<!---------------------------------------------- FOOTER ---------------------------------------------->
+		<footer id="footer">
+			<div class="container">
+				<h3>Download us at</h3>
+				<div class="imaga-logo">
+					<img src="../../src/images/Googleplay.png" alt="" />
+					<img
+						src="../../src/images/Applestore-removebg-preview.png"
+						alt=""
+					/>
+				</div>
+				<div class="content">
+					<h3>
+						© 2023 JSE - Melacak Nomor Resi dengan Presisi. Hak
+						Cipta Dilindungi.
+					</h3>
+					<h3>Hubungi Kami</h3>
+					<h3>08123141237234</h3>
+					<h3>JSEContact@gmail.com</h3>
+				</div>
+			</div>
+		</footer>
+		<script src="../checkAuth.js"></script>
+		<script src="js/request.js"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+			crossorigin="anonymous"
+		></script>
+	</body>
 </html>

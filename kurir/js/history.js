@@ -1,4 +1,4 @@
-const endpoint = "https://localhost:7023/delivery";
+const endpoint = "https://jseapiserver.azurewebsites.net/courier/history";
 let shipmentData;
 const { jwtToken, jwtData } = checkAuth("Courier", window.location.href);
 
@@ -6,13 +6,20 @@ function populateTable() {
 	let tableBody = document.querySelector("#myTable tbody");
 
 	// Ganti URL_API dengan URL sesuai dengan API yang ingin Anda gunakan
-	fetch(endpoint)
+	const fetchOptions = {
+		headers: {
+			Authorization: `bearer ${jwtToken}`,
+		},
+		"Content-Type": "application/json",
+	};
+	fetch(endpoint, fetchOptions)
 		.then((response) => response.json())
 		.then((data) => {
 			console.log(data);
 			// Periksa apakah data dari API tidak kosong
 			if (data && data.length > 0) {
 				data.forEach((shipment) => {
+					console.log(shipment);
 					let row = tableBody.insertRow();
 					row.innerHTML = `<th scope="row">${
 						shipment.tracking_number

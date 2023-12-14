@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		console.log(trackingNumber);
 		if (trackingNumber.trim() !== "") {
 			let apiUrl =
-				"https://localhost:7023/delivery/dispatch?tracking_number=" +
+				"https://jseapiserver.azurewebsites.net/delivery/dispatch?tracking_number=" +
 				trackingNumber;
 
 			fetch(apiUrl, {
@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		if (trackingNumber.trim() !== "") {
 			let apiUrl =
-				"https://localhost:7023/delivery/arrived?tracking_number=" +
+				"https://jseapiserver.azurewebsites.net/delivery/arrived?tracking_number=" +
 				trackingNumber;
 
 			fetch(apiUrl, {
@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		if (trackingNumber.trim() !== "") {
 			let apiUrl =
-				"https://localhost:7023/delivery/returnedToPool?tracking_number=" +
+				"https://jseapiserver.azurewebsites.net/delivery/returnedToPool?tracking_number=" +
 				trackingNumber;
 
 			fetch(apiUrl, {

@@ -22,7 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
 	const nomorTelepon = document.getElementById("nomor-telepon");
 	const alamatPenerima = document.getElementById("alamat");
 
-	const baseUrl = "https://localhost:7023/courier/current_delivery";
+	const baseUrl =
+		"https://jseapiserver.azurewebsites.net/courier/current_delivery";
 
 	const options = {
 		method: "GET",
@@ -71,13 +72,13 @@ document.addEventListener("DOMContentLoaded", () => {
 			alert("You must upload image proof!");
 			return; // stops fetching execution
 		}
-		const imageUploadURL = `https://localhost:7023/image/${
+		const imageUploadURL = `https://jseapiserver.azurewebsites.net/image/${
 			deliveryData().tracking_number
 		}`;
 		const successDeliveryURL =
-			"https://localhost:7023/delivery/successDelivery";
+			"https://jseapiserver.azurewebsites.net/delivery/successDelivery";
 		const cancelledDeliveryURL =
-			"https://localhost:7023/delivery/failedDelivery";
+			"https://jseapiserver.azurewebsites.net/delivery/failedDelivery";
 
 		const imageUploadoptions = {
 			method: "POST",
@@ -139,7 +140,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		const reasonText = document.getElementById("alasanGagalKirim").value;
 
-		const baseURL = "https://localhost:7023/delivery/failedDelivery";
+		const baseURL =
+			"https://jseapiserver.azurewebsites.net/delivery/failedDelivery";
 		console.log(baseURL);
 		const failedBody = {
 			tracking_number: deliveryData().tracking_number,

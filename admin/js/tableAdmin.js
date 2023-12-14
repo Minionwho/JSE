@@ -1,4 +1,4 @@
-const endpoint = "https://localhost:7023/delivery";
+const endpoint = "https://jseapiserver.azurewebsites.net/delivery";
 let shipmentData;
 let message;
 
@@ -31,11 +31,11 @@ function populateTable(callback) {
 				data.forEach(function (shipment) {
 					let direction = "";
 					if (jwtData.pool_city === shipment.pool_sender_city) {
-						direction = "Inbound";
+						direction = "Outbound";
 					} else if (
 						jwtData.pool_city === shipment.pool_receiver_city
 					) {
-						direction = "Outbound";
+						direction = "Inbound";
 					}
 					let row = tableBody.insertRow();
 					row.innerHTML = `

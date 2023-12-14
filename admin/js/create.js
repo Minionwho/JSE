@@ -79,7 +79,8 @@ submitBtn.addEventListener("click", (e) => {
 		return;
 	}
 
-	const baseUrl = "https://localhost:7023/delivery/create_delivery";
+	const baseUrl =
+		"https://jseapiserver.azurewebsites.net/delivery/create_delivery";
 	const credentials = {
 		sender_name: senderName,
 		sender_phone: senderPhone,
@@ -121,6 +122,8 @@ submitBtn.addEventListener("click", (e) => {
 	}
 
 	fetchData();
+
+	window.location.href(window.location);
 });
 
 function calcTotalCost() {

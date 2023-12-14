@@ -53,8 +53,8 @@ $(document).ready(async () => {
 	const openModalBtn = $("#openModalBtn");
 	const closeModalBtn = $("#closeModalBtn");
 
-	const infoBaseUrl = `https://localhost:7023/delivery/${tracking_number}`;
-	const imageBaseUrl = `https://localhost:7023/image/${tracking_number}`;
+	const infoBaseUrl = `https://jseapiserver.azurewebsites.net/delivery/${tracking_number}`;
+	const imageBaseUrl = `https://jseapiserver.azurewebsites.net/image/${tracking_number}`;
 	const option = {
 		method: "GET",
 		headers: {
@@ -74,7 +74,7 @@ $(document).ready(async () => {
 			$(tracking_number_element).text(tracking_number);
 			$(receiver_name).text(data.intended_receiver_name);
 			$(receiver_phone).text(data.receiver_phone);
-			const courier_username = data.Courier.courier_username;
+			const courier_username = data.Courier?.courier_username;
 			if (courier_username == null || courier_username == undefined) {
 				$(courier_name).text("N/A");
 			} else {
@@ -82,7 +82,6 @@ $(document).ready(async () => {
 			}
 
 			const messages = data.Messages;
-
 			// sort messages in descending order.
 			messages.sort((a, b) => {
 				const dateb = new Date(b.timestamp);

@@ -1,4 +1,4 @@
-const endpoint = "https://localhost:7023/delivery/admin_pool";
+const endpoint = "https://jseapiserver.azurewebsites.net/delivery/admin_pool";
 let shipmentData;
 let message;
 
@@ -187,7 +187,8 @@ document.addEventListener("DOMContentLoaded", function () {
 const assignDeliveries = document.getElementById("assign");
 
 assignDeliveries.addEventListener("click", () => {
-	const baseURL = "https://localhost:7023/delivery/assignDeliveries";
+	const baseURL =
+		"https://jseapiserver.azurewebsites.net/delivery/assignDeliveries";
 	const headers = {
 		method: "POST",
 		headers: { Authorization: `bearer ${jwtToken}` },

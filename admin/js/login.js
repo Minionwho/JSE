@@ -13,7 +13,8 @@ submitBtn.addEventListener("click", (e) => {
 	const params = new URLSearchParams(url);
 	const redirect = params.get("redirect");
 	if (validInput) {
-		const baseUrl = "https://localhost:7023/auth/admin/login";
+		const baseUrl =
+			"https://jseapiserver.azurewebsites.net/auth/admin/login";
 		const credentials = {
 			admin_username: usernameInput.value,
 			admin_password: passwordInput.value,
