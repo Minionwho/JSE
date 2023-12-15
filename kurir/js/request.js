@@ -104,6 +104,10 @@ submitBtn.addEventListener("click", (e) => {
 });
 
 function toggleRequest(available) {
+	// Request Delivery
+	const reqMessage = document.querySelector(".req-message");
+	const submitBtn = document.querySelector(".submit");
+	const informations = document.querySelector(".information");
 	if (available) {
 		informations.style.display = "none";
 		reqMessage.innerHTML = "You do not have any current deliveries!";
