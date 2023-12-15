@@ -14,7 +14,7 @@ const senderPhone = document.querySelector(".sender-phone");
 const senderCity = document.querySelector(".sender-city");
 
 // Receiver Information
-const intendedReceiverName = document.querySelector(".receiver-name");
+const intendedReceiverName = document.querySelector(".intended-receiver-name");
 const receiverAddress = document.querySelector(".receiver-address");
 const receiverPhone = document.querySelector(".receiver-phone");
 const receiverCity = document.querySelector(".receiver-city");

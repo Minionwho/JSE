@@ -123,7 +123,7 @@ submitBtn.addEventListener("click", (e) => {
 
 	fetchData();
 
-	window.location.href(window.location);
+	window.location.assign(window.location);
 });
 
 function calcTotalCost() {
