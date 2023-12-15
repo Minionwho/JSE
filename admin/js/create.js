@@ -115,15 +115,13 @@ submitBtn.addEventListener("click", (e) => {
 			console.log(data);
 
 			alert("Package created.");
-			// window.location.assign("../admin/dashboard/create.html");
+			window.location.assign("/admin/dashboard/create.html");
 		} catch (error) {
 			console.error("Error fetching data:", error);
 		}
 	}
 
 	fetchData();
-
-	window.location.assign(window.location);
 });
 
 function calcTotalCost() {
