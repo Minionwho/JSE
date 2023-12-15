@@ -66,7 +66,7 @@ submitBtn.addEventListener("click", (e) => {
 		},
 	};
 
-	toggleRequest(true);
+	toggleRequest(false);
 	// fetch /courier/request_delivery
 	fetch(reqDeliveryUrl, reqOptions)
 		.then((response) => {
